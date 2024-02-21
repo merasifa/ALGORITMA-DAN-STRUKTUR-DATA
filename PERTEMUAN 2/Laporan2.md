@@ -40,8 +40,8 @@
 ## 2.2.3 Pertanyaan
 1. Pada class BukuMain, tunjukkan baris kode program yang digunakan untuk proses instansiasi!</br>
 Apa nama object yang dihasilkan?
-Baris Program yang digunakan untuk instansiasi Buku27 bk1 = new Buku27();
-Nama Object yang dihasilkan adalah bk1
+   Baris Program yang digunakan untuk instansiasi Buku27 bk1 = new Buku27();
+   Nama Object yang dihasilkan adalah bk1
 2. Bagaimana cara mengakses atribut dan method dari suatu objek?
    Menambahkan operator titik(.) dan diikuti oleh nama atribut.
 3. Mengapa hasil output pemanggilan method tampilInformasi() pertama dan kedua berbeda?
