@@ -26,7 +26,13 @@
 3. Ada berapa method yang dimiliki oleh class tersebut? Sebutkan apa saja methodnya!<br>
    Class tersebut memiliki 4 Method, diantaranya yaitu method tampilInformasi, method terjual, method restock, dan method gantiHarga.
 4. Perhatikan method terjual() yang terdapat di dalam class Buku. Modifikasi isi method tersebut sehingga proses pengurangan hanya dapat dilakukan jika stok masih ada (lebih besar dari 0)!<br>
+   void terjual(int jml) {
+        if (stok > 0 && jml <= stok)
+        stok -= jml;
 5. Menurut Anda, mengapa method restock() mempunyai satu parameter berupa bilangan int?<br>
+   Agar hasil dari method tersebut bisa dijumlahkan dengan stock dan jumlah
+6. Commit dan push kode program ke Github
+
 
 ## 2.2 Percobaan 2: Instansiasi Object, serta Mengakses Atribut dan Method
 ![alt text](image.png)
@@ -37,5 +43,27 @@ Apa nama object yang dihasilkan?
 Baris Program yang digunakan untuk instansiasi Buku27 bk1 = new Buku27();
 Nama Object yang dihasilkan adalah bk1
 2. Bagaimana cara mengakses atribut dan method dari suatu objek?
-
+   Menambahkan operator titik(.) dan diikuti oleh nama atribut.
 3. Mengapa hasil output pemanggilan method tampilInformasi() pertama dan kedua berbeda?
+   Karena
+
+
+## 2.3 Percobaan 3: Membuat Konstruktor
+
+
+## 2.3.3 Pertanyaan
+1. Pada class Buku di Percobaan 3, tunjukkan baris kode program yang digunakan untuk
+mendeklarasikan konstruktor berparameter!<br>
+public Buku27(String jud, String pg, int hal, int stok, int har)
+2. Perhatikan class BukuMain. Apa sebenarnya yang dilakukan pada baris program berikut?<br>
+Baris kode tersebut adalah instansiasi objek dari class buku27, dengan menggunakan constructor parameter. "bk2" adalah nama objek yang baru dibuat. "self reward", "maheera ayesha", 160, 29, 59000 adalah argumen yang diberikan kepada konstruktor. 
+3. Hapus konstruktor default pada class Buku, kemudian compile dan run program. Bagaimana
+hasilnya? Jelaskan mengapa hasilnya demikian!<br>
+
+4. Setelah melakukan instansiasi object, apakah method di dalam class Buku harus diakses
+secara berurutan? Jelaskan alasannya!<br>
+
+5. Buat object baru dengan nama buku<NamaMahasiswa> menggunakan konstruktor
+berparameter dari class Buku!<br>
+
+6. Commit dan push kode program ke Github
