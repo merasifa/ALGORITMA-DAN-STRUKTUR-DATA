@@ -14,8 +14,11 @@ public class BukuMain27 {
         bk1.tampilInformasi();
 
         Buku27 bk2 = new Buku27("Self Reward", "Maheera Ayesha", 160, 29, 59000);
-        
         bk2.terjual(11);
         bk2.tampilInformasi();
+
+        Buku27 bkTiara = new Buku27("Laskar Pelangi","Joko", 200, 30, 50000);
+        bkTiara.terjual(8);
+        bkTiara.tampilInformasi();
     }
 }

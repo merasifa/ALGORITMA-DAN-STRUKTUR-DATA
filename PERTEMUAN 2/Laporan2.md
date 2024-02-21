@@ -45,25 +45,25 @@ Nama Object yang dihasilkan adalah bk1
 2. Bagaimana cara mengakses atribut dan method dari suatu objek?
    Menambahkan operator titik(.) dan diikuti oleh nama atribut.
 3. Mengapa hasil output pemanggilan method tampilInformasi() pertama dan kedua berbeda?
-   Karena
+   Karena tergantung pada implementasi method tersebut dan juga keadaan objek pada saat pemanggilan.
 
 
 ## 2.3 Percobaan 3: Membuat Konstruktor
-
+![alt text](image1.png)
+![alt text](image2.png)
 
 ## 2.3.3 Pertanyaan
 1. Pada class Buku di Percobaan 3, tunjukkan baris kode program yang digunakan untuk
 mendeklarasikan konstruktor berparameter!<br>
-public Buku27(String jud, String pg, int hal, int stok, int har)
+   public Buku27(String jud, String pg, int hal, int stok, int har)
 2. Perhatikan class BukuMain. Apa sebenarnya yang dilakukan pada baris program berikut?<br>
-Baris kode tersebut adalah instansiasi objek dari class buku27, dengan menggunakan constructor parameter. "bk2" adalah nama objek yang baru dibuat. "self reward", "maheera ayesha", 160, 29, 59000 adalah argumen yang diberikan kepada konstruktor. 
+   Baris kode tersebut adalah instansiasi objek dari class buku27, dengan menggunakan constructor parameter. "bk2" adalah nama objek yang baru dibuat. "self reward", "maheera ayesha", 160, 29, 59000 adalah argumen yang diberikan kepada konstruktor. 
 3. Hapus konstruktor default pada class Buku, kemudian compile dan run program. Bagaimana
 hasilnya? Jelaskan mengapa hasilnya demikian!<br>
-
+   Hasilnya erorr. Hasilnya error karena class tidak akan bisa memiliki konstruktor yang menerima parameter.
 4. Setelah melakukan instansiasi object, apakah method di dalam class Buku harus diakses
 secara berurutan? Jelaskan alasannya!<br>
-
-5. Buat object baru dengan nama buku<NamaMahasiswa> menggunakan konstruktor
-berparameter dari class Buku!<br>
-
+   Tidak, kita bisa memanggil method sesuai kebutuhan yang diinginkan
+5. Buat object baru dengan nama buku<NamaMahasiswa> menggunakan konstruktor berparameter dari class Buku!<br>
+![alt text](image3.png)
 6. Commit dan push kode program ke Github
