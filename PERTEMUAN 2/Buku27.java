@@ -1,7 +1,3 @@
-
-/**
- * Buku27
- */
 public class Buku27 {
 
     String judul, pengarang;
@@ -14,6 +10,7 @@ public class Buku27 {
         System.out.println("Harga: Rp " + harga);
     }
     void terjual(int jml) {
+        if (stok > 0 && jml <= stok)
         stok -= jml;
     }
     void restock(int jml) {
@@ -23,4 +20,3 @@ public class Buku27 {
         harga = hrg;
     }
 }
-    
