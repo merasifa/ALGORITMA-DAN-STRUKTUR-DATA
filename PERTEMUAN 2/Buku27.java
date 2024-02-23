@@ -1,6 +1,6 @@
 public class Buku27 {
     String judul, pengarang;
-    int halaman, stok, harga;
+    int halaman, stok, harga, terjual;
 
     public Buku27(){}
 
@@ -18,14 +18,19 @@ public Buku27(String jud, String pg, int hal, int stok, int har){
         System.out.println("Sisa stok: " + stok);
         System.out.println("Harga: Rp " + harga);
     }
+    
     void terjual(int jml) {
         if (stok > 0 && jml <= stok)
         stok -= jml;
     }
+
     void restock(int jml) {
         stok += jml;
     }
+
     void gantiHarga(int hrg){
         harga = hrg;
     }
+
+
 }
