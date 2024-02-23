@@ -18,7 +18,7 @@ public Buku27(String jud, String pg, int hal, int stok, int har){
         System.out.println("Sisa stok: " + stok);
         System.out.println("Harga: Rp " + harga);
     }
-    
+
     void terjual(int jml) {
         if (stok > 0 && jml <= stok)
         stok -= jml;
@@ -32,5 +32,15 @@ public Buku27(String jud, String pg, int hal, int stok, int har){
         harga = hrg;
     }
 
+    void hitungHargaTotal(){
+        
+    }
 
+    void hitungHargaBayar(){
+
+    }
+
+    void hitungDiskon(){
+
+    }
 }
