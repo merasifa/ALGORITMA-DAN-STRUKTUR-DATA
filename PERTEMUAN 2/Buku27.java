@@ -1,10 +1,10 @@
 public class Buku27 {
     String judul, pengarang;
-    int halaman, stok, harga, terjual;
+    int halaman, stok, harga, total, jual;
 
     public Buku27(){}
 
-public Buku27(String jud, String pg, int hal, int stok, int har){
+public Buku27(String jud, String pg, int hal, int stok, int har, int jual){
     judul = jud;
     pengarang = pg;
     halaman = hal;
@@ -20,8 +20,13 @@ public Buku27(String jud, String pg, int hal, int stok, int har){
     }
 
     void terjual(int jml) {
-        if (stok > 0 && jml <= stok)
+        if (stok > 0 && jml <= stok) {
+        jual = jml;
         stok -= jml;
+        System.out.println("Stok Habis");
+        }else{
+            System.out.println("Buku Habis");
+        }
     }
 
     void restock(int jml) {
@@ -33,14 +38,15 @@ public Buku27(String jud, String pg, int hal, int stok, int har){
     }
 
     void hitungHargaTotal(){
-        
-    }
-
-    void hitungHargaBayar(){
-
+        int hargaTotal = jual* harga;
+        return hargaTotal;
     }
 
     void hitungDiskon(){
+        int total = hitungHargaTotal();
+    }
+
+    void hitungHargaBayar(){
 
     }
 }

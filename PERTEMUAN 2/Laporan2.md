@@ -1,15 +1,16 @@
 # <p align ="center">  LAPORAN PRAKTIKUM ALGORITMA DAN STRUKTUR DATA </p> 
+# <p align ="center">  JOBSHEET 2 </p> 
 <br><br><br><br>
 
 <p align="center">
-   <img src="https://static.wikia.nocookie.net/logopedia/images/8/8a/Politeknik_Negeri_Malang.png/revision/latest?cb=20190922202558" width="50%"> </p>
+   <img src="https://static.wikia.nocookie.net/logopedia/images/8/8a/Politeknik_Negeri_Malang.png/revision/latest?cb=20190922202558" width="30%"> </p>
 
 <br><br><br><br><br>
 
 
 <p align = "center"> Nama : Tiara Mera Sifa </p>
 <p align = "center"> NIM  : 2341720247 </p>
-<p align = "center"> Prodi: TEKNIK INFOMATIKA</p>
+<p align = "center"> Prodi: D-IV Teknik Informatika</p>
 <p align = "center"> Kelas: 1B / 27 </p>
 
 <br><br><br><br><br>
@@ -35,7 +36,7 @@
 
 
 ## 2.2 Percobaan 2: Instansiasi Object, serta Mengakses Atribut dan Method
-![alt text](image.png)
+![alt text](<img/image.png>)
 
 ## 2.2.3 Pertanyaan
 1. Pada class BukuMain, tunjukkan baris kode program yang digunakan untuk proses instansiasi!</br>
@@ -49,8 +50,11 @@ Apa nama object yang dihasilkan?
 
 
 ## 2.3 Percobaan 3: Membuat Konstruktor
-![alt text](image1.png)
-![alt text](image2.png)
+![alt text](<img/image1.png>)
+![alt text](<img/image2.png>)
+
+## 2.3.2 Verifikasi Hasil Percobaan
+
 
 ## 2.3.3 Pertanyaan
 1. Pada class Buku di Percobaan 3, tunjukkan baris kode program yang digunakan untuk
@@ -65,9 +69,18 @@ hasilnya? Jelaskan mengapa hasilnya demikian!<br>
 secara berurutan? Jelaskan alasannya!<br>
    Tidak, kita bisa memanggil method sesuai kebutuhan yang diinginkan
 5. Buat object baru dengan nama buku<NamaMahasiswa> menggunakan konstruktor berparameter dari class Buku!<br>
-![alt text](image3.png)
+![alt text](<img/image3.png>)
 6. Commit dan push kode program ke Github
 
 
 ## 2.4 Latihan Praktikum
-1. 
+1. . Pada class Buku yang telah dibuat, tambahkan tiga method yaitu hitungHargaTotal(),
+hitungDiskon(), dan hitungHargaBayar() dengan penjelasan sebagai berikut:
+
+2. Buat program berdasarkan class diagram dragon berikut ini!
+# dragon.java
+![alt text](<img/image4.png>)
+# dragonmain.java
+![alt text](<img/image5.png>)
+# Hasil Percobaan 
+![alt text](<img/image6.png>)
