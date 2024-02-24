@@ -53,8 +53,6 @@ Apa nama object yang dihasilkan?
 ![alt text](<img/image1.png>)
 ![alt text](<img/image2.png>)
 
-## 2.3.2 Verifikasi Hasil Percobaan
-
 
 ## 2.3.3 Pertanyaan
 1. Pada class Buku di Percobaan 3, tunjukkan baris kode program yang digunakan untuk
