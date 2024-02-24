@@ -76,7 +76,12 @@ secara berurutan? Jelaskan alasannya!<br>
 ## 2.4 Latihan Praktikum
 1. . Pada class Buku yang telah dibuat, tambahkan tiga method yaitu hitungHargaTotal(),
 hitungDiskon(), dan hitungHargaBayar() dengan penjelasan sebagai berikut:
-
+# buku27.java
+![alt text](<img/image9.png>)
+# bukuMain27.java
+![alt text](<img/image8.png>)
+# Hasil Percobaan
+![alt text](<img/image7.png>)
 2. Buat program berdasarkan class diagram dragon berikut ini!
 # dragon.java
 ![alt text](<img/image4.png>)

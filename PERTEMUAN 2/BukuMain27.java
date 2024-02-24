@@ -18,7 +18,12 @@ public class BukuMain27 {
         bk2.tampilInformasi();
 
         Buku27 bkTiara = new Buku27("Laskar Pelangi","Joko", 200, 30, 50000);
-        bkTiara.terjual(8);
+        bkTiara.terjual(10);
         bkTiara.tampilInformasi();
+
+        
+        System.out.println("Harga Total : " + bkTiara.hitungHargaTotal());
+        System.out.println("Harga Diskon: " + bkTiara.hitungDiskon());
+        System.out.println("Harga Bayar : " + bkTiara.hitungHargaBayar());
     }
 }

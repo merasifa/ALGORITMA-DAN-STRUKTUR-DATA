@@ -4,7 +4,7 @@ public class Buku27 {
 
     public Buku27(){}
 
-public Buku27(String jud, String pg, int hal, int stok, int har, int jual){
+public Buku27(String jud, String pg, int hal, int stok, int har){
     judul = jud;
     pengarang = pg;
     halaman = hal;
@@ -37,16 +37,29 @@ public Buku27(String jud, String pg, int hal, int stok, int har, int jual){
         harga = hrg;
     }
 
-    void hitungHargaTotal(){
-        int hargaTotal = jual* harga;
+    int hitungHargaTotal(){
+        int hargaTotal = jual * harga;
         return hargaTotal;
+
     }
 
-    void hitungDiskon(){
+    int hitungDiskon(){
         int total = hitungHargaTotal();
+
+        if (total > 150000) {
+            return (total * 12 / 100);
+        } else if ( total >= 75000 && total <= 150000) {
+            return (total * 5 / 100);
+        } else {
+            return 0;
+        }
     }
 
-    void hitungHargaBayar(){
+    int hitungHargaBayar(){
+        int total = hitungHargaTotal();
+        int diskon = hitungDiskon();
+        int bayar = total - diskon;
+        return bayar;
 
     }
 }
