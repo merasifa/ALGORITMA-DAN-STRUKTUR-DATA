@@ -1,5 +1,5 @@
 # <p align ="center">  LAPORAN PRAKTIKUM ALGORITMA DAN STRUKTUR DATA </p> 
-# <p align ="center">  JOBSHEET 2 </p> 
+# <p align ="center">  JOBSHEET 1 </p> 
 <br><br><br><br>
 
 <p align="center">
@@ -19,7 +19,7 @@
 ## 2.1 Pemilihan
 Waktu percobaan : 50 menit
 ## 2.1.1 Praktikum Pemilihan
-
+![Alt text](<img/1.png>)
 ## 2.1.2 Hasil Percobaan
 
 
