@@ -21,6 +21,10 @@ Waktu percobaan : 50 menit
 ## 2.1.1 Praktikum Pemilihan
 ![Alt text](<img/1.png>)
 ## 2.1.2 Hasil Percobaan
+# Nilai tidak valid
+![Alt text](<img/2.png>)
+# Nilai Valid
+![alt text](<img/3.png>)
 
 
 ## 2.2 Perulangan
