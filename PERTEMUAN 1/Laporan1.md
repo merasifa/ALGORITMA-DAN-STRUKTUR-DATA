@@ -32,7 +32,7 @@ Waktu percobaan : 50 menit
 ## 2.2.1 Praktikum Perulangan
 
 ## 2.2.2 Hasil Percobaan
-
+![alt text](<img/4.png>)
 
 ## 2.3 Array
 Waktu percobaan : 50 menit

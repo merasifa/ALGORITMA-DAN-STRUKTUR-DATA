@@ -17,12 +17,18 @@ public class perulangan {
             n += 10;
         }
 
-        System.out.println("n :" + n);
-        
-        for (i > 10, i= n, i++){
-
+        System.out.println("n : " + n);
+        System.out.println("=======================");
+        for (int i=1; i <= n; i++){
+            if (i  != 6 && i !=10) {
+                if (i %2 == 0) {
+                    System.out.print(i);
+                } else {
+                System.out.print( "*");
+            }
         }
         
 
     }
+}
 }
