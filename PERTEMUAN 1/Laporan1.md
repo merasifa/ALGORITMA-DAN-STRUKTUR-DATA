@@ -30,24 +30,32 @@ Waktu percobaan : 50 menit
 ## 2.2 Perulangan
 Waktu percobaan : 50 menit
 ## 2.2.1 Praktikum Perulangan
-
+![alt text](<img/8.png>)
 ## 2.2.2 Hasil Percobaan
 ![alt text](<img/4.png>)
 
 ## 2.3 Array
 Waktu percobaan : 50 menit
 ## 2.3.1 Praktikum Array
-
+![alt text](<img/7.png>)
 ## 2.3.2 Hasil Percobaan
+![alt text](<img/10.png>)
 
 
 ## 2. 4 Fungsi
 Waktu percobaan : 50 menit
 ## 2.3.1 Praktikum Fungsi
-
+![alt text](<img/5.png>)
 ## 2.3.2 Hasil Percobaan
-
+![alt text](<img/9.png>)
 
 ### Tugas
 1.
-2.
+![alt text](<img/12.png>)
+### Hasil
+![alt text](<img/13.png>)
+2.![alt text](<img/6.png>)
+#### Hasil
+![alt text](<img/11.png>)
+
+
