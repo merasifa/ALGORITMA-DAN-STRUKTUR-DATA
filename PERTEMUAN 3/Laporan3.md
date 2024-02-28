@@ -15,12 +15,12 @@
 
 <br><br><br><br><br>
 
-### Praktikum
+# Praktikum
 ## 3.2 Membuat Array dari Object, Mengisi dan Menampilkan
-![alt text](img/1.png)
-![alt text](img/2.png)
+![alt text](<img/1.png>)
+![alt text](<img/2.png>)
 ## 3.2.2 Verifikasi Hasil Percobaan
-![alt text](img/3.png)
+![alt text](<img/3.png>)
 ## 3.2.3 Pertanyaan
 1. Berdasarkan uji coba 3.2, apakah class yang akan dibuat array of object harus selalu memiliki atribut dan sekaligus method?Jelaskan!<br> Tidak, jadi setiap class yang akan dibuat sebagai array tidak wajib memiliki atribut dan method. Mehod dan atribut diberikan sesuai kebutuhan program
 
@@ -38,22 +38,33 @@
 Agar terstruktur dan lebih rapi, serta memisahkan tanggung jawab antar kode.
 
 ## 3.3 Menerima Input Isian Array Menggunakan Looping
+![alt text](<img/6.png>)
+
 ## 3.3.2 Verifikasi Hasil Percobaan
+![alt text](<img/image2.png>)
+
 ## 3.3.3 Pertanyaan
-1. Apakah array of object dapat diimplementasikan pada array 2 Dimensi?
-2. Jika jawaban soal no satu iya, berikan contohnya! Jika tidak, jelaskan!
+1. Apakah array of object dapat diimplementasikan pada array 2 Dimensi?<br>
+bisa
+2. Jika jawaban soal no satu iya, berikan contohnya! Jika tidak, jelaskan!<br>
+
 3. Jika diketahui terdapat class Persegi yang memiliki atribut sisi bertipe integer, maka kode 
-dibawah ini akan memunculkan error saat dijalankan. Mengapa?
-4. Modifikasi kode program pada praktikum 3.3 agar length array menjadi inputan dengan Scanner!
+dibawah ini akan memunculkan error saat dijalankan. Mengapa?<br>
+
+4. Modifikasi kode program pada praktikum 3.3 agar length array menjadi inputan dengan Scanner!<br>
+
 5. Apakah boleh Jika terjadi duplikasi instansiasi array of objek, misalkan saja instansiasi dilakukan 
-pada ppArray[i] sekaligus ppArray[0]?Jelaskan !
+pada ppArray[i] sekaligus ppArray[0]?Jelaskan !<br>
 
 ## 3.4 Operasi Matematika Atribut Object Array
+![alt text](<img/4.png>)
+![alt text](<img/5.png>)
 ## 3.4.2 Verifikasi Hasil Percobaan
+![alt text](img/image1.png)
 ## 3.4.3 Pertanyaan
 1. Dapatkah konstruktor berjumlah lebih dalam satu kelas? Jelaskan dengan contoh!
-2. Jika diketahui terdapat class Segitiga seperti berikut ini:
-![alt text](img/image.png)
+2. Jika diketahui terdapat class Segitiga seperti berikut ini:<br>
+![alt text](<img/image soal.png>)<br>
 Tambahkan konstruktor pada class Segitiga tersebut yang berisi parameter int a, int t
 yang masing-masing digunakan untuk mengisikan atribut alas dan tinggi.
 3. Tambahkan method hitungLuas() dan hitungKeliling() pada class Segitiga
@@ -66,6 +77,5 @@ sgArray ke-2 alas: 15, tinggi: 6
 sgArray ke-3 alas: 25, tinggi: 10
 5. Kemudian menggunakan looping, cetak luas dan keliling dengan cara memanggil method 
 hitungLuas() dan hitungKeliling().
-
 
 
