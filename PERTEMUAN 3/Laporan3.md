@@ -52,30 +52,38 @@ bisa
 dibawah ini akan memunculkan error saat dijalankan. Mengapa?<br>
 
 4. Modifikasi kode program pada praktikum 3.3 agar length array menjadi inputan dengan Scanner!<br>
+![alt text](<img/10.png>)
 
 5. Apakah boleh Jika terjadi duplikasi instansiasi array of objek, misalkan saja instansiasi dilakukan 
 pada ppArray[i] sekaligus ppArray[0]?Jelaskan !<br>
-
+    boleh, tapi nilainya akan tertumpuk-tumpuk.
 ## 3.4 Operasi Matematika Atribut Object Array
 ![alt text](<img/4.png>)
 ![alt text](<img/5.png>)
 ## 3.4.2 Verifikasi Hasil Percobaan
 ![alt text](img/image1.png)
 ## 3.4.3 Pertanyaan
-1. Dapatkah konstruktor berjumlah lebih dalam satu kelas? Jelaskan dengan contoh!
+1. Dapatkah konstruktor berjumlah lebih dalam satu kelas? Jelaskan dengan contoh! <br>
+bisa, sesuai dengan kebutuhan.
 2. Jika diketahui terdapat class Segitiga seperti berikut ini:<br>
 ![alt text](<img/image soal.png>)<br>
 Tambahkan konstruktor pada class Segitiga tersebut yang berisi parameter int a, int t
-yang masing-masing digunakan untuk mengisikan atribut alas dan tinggi.
+yang masing-masing digunakan untuk mengisikan atribut alas dan tinggi.<br>
+![alt text](<img/8.png>)
 3. Tambahkan method hitungLuas() dan hitungKeliling() pada class Segitiga
-tersebut.
+tersebut.<br>
+![alt text](<img/9.png>)
 4. Pada fungsi main, buat array Segitiga sgArray yang berisi 4 elemen, isikan masing-masing 
 atributnya sebagai berikut:
 sgArray ke-0 alas: 10, tinggi: 4
 sgArray ke-1 alas: 20, tinggi: 10
 sgArray ke-2 alas: 15, tinggi: 6
 sgArray ke-3 alas: 25, tinggi: 10
+![alt text](<img/7.png>)
 5. Kemudian menggunakan looping, cetak luas dan keliling dengan cara memanggil method 
-hitungLuas() dan hitungKeliling().
+hitungLuas() dan hitungKeliling().<br>
+![alt text](img/image3.png)
+
+# 3.5 Latihan Praktikum
 
 

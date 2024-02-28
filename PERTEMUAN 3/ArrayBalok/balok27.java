@@ -8,6 +8,7 @@ public class balok27 {
         tinggi = t;
     }
 
+
     public int hitungVolume(){
         return panjang *lebar * tinggi;
     }
