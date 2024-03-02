@@ -45,12 +45,45 @@ Agar terstruktur dan lebih rapi, serta memisahkan tanggung jawab antar kode.
 
 ## 3.3.3 Pertanyaan
 1. Apakah array of object dapat diimplementasikan pada array 2 Dimensi?<br>
-bisa
+bisa, array of object dapat diimplementasikan dalam bentuk array 2 dimensi.
 2. Jika jawaban soal no satu iya, berikan contohnya! Jika tidak, jelaskan!<br>
+
+            public class Mahasiswa {
+            String nama;
+            int umur;
+
+            public Mahasiswa(String nama, int umur) {
+            this.nama = nama;
+            this.umur = umur;
+            }
+            }
+
+            public class Main {
+            public static void main(String[] args) {
+            // Membuat array 2 dimensi dari objek Mahasiswa
+            Mahasiswa[][] dataMahasiswa = new Mahasiswa[2][3];
+
+                // Inisialisasi objek-objek Mahasiswa dalam array 2 dimensi
+                dataMahasiswa[0][0] = new Mahasiswa("John", 20);
+                dataMahasiswa[0][1] = new Mahasiswa("Jane", 22);
+                dataMahasiswa[0][2] = new Mahasiswa("Doe", 21);
+                dataMahasiswa[1][0] = new Mahasiswa("Alice", 23);
+                dataMahasiswa[1][1] = new Mahasiswa("Bob", 24);
+                dataMahasiswa[1][2] = new Mahasiswa("Eve", 25);
+
+                // Mengakses dan menampilkan data
+                for (int i = 0; i < dataMahasiswa.length; i++) {
+                    for (int j = 0; j < dataMahasiswa[i].length; j++) {
+                        System.out.println("Nama: " + dataMahasiswa[i][j].nama + ", Umur: " + dataMahasiswa[i][j].umur);
+                    }
+                }
+            }
+            }
+
 
 3. Jika diketahui terdapat class Persegi yang memiliki atribut sisi bertipe integer, maka kode 
 dibawah ini akan memunculkan error saat dijalankan. Mengapa?<br>
-
+Karena kode tersebut berupa deklarasi, sedangkan elemennya tidak di inisialisasi
 4. Modifikasi kode program pada praktikum 3.3 agar length array menjadi inputan dengan Scanner!<br>
 ![alt text](<img/10.png>)
 
@@ -85,5 +118,16 @@ hitungLuas() dan hitungKeliling().<br>
 ![alt text](img/image3.png)
 
 # 3.5 Latihan Praktikum
+
+1. ## Kode
+![alt text](<img/11.png>)
+![alt text](<img/12.png>)
+![alt text](<img/13.png>)
+![alt text](<img/14.png>)
+## Hasil
+!\[alt text\](img/image4.png)
+2. ## Kode
+
+## Hasil
 
 
