@@ -69,10 +69,10 @@ public class main27 {
                 limas27[] listL = new limas27[jmlL];
 
                 for(int i= 0; i < jmlL ; i++){ //looping untuk menerima inputan 
-                    System.out.print("Masukkan panjang sisi alas limas ke  " + (i+1) +":");
+                    System.out.print("Masukkan panjang sisi alas limas ke  " + (i+1) +" :");
                     int panjangSisiAlas = sc.nextInt();
 
-                    System.out.print("Masukkan tinggi limas ke  " + (i+1)+ ":");
+                    System.out.print("Masukkan tinggi limas ke  " + (i+1)+ " :");
                     int tinggi = sc.nextInt();
 
                     listL[i] = new limas27(panjangSisiAlas, tinggi);
@@ -84,8 +84,8 @@ public class main27 {
                     System.out.println("============================================");
                     System.out.println("Bangun Ruang Limas ke " + (i+1));
                     System.out.println("============================================");
-                    System.out.println("Luas Permukaan: "  + (i+1) + ": " + listL[i].hitungLP());
-                    System.out.println("Volume: "  + (i+1) + ": " + listL[i].hitungVolume());
+                    System.out.println("Luas Permukaan "  + (i+1) + " : " + listL[i].hitungLP());
+                    System.out.println("Volume "  + (i+1) + " : " + listL[i].hitungVolume());
                     
                 }
                 break;
