@@ -125,8 +125,10 @@ hitungLuas() dan hitungKeliling().<br>
 ![alt text](<img/13.png>)
 ![alt text](<img/14.png>)
 ## Hasil
-!\[alt text\](img/image4.png)
-2. ## Kode
+![alt text](<img/image4.png>)
+
+2. 
+## Kode
 
 ## Hasil
 
