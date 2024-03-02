@@ -31,7 +31,7 @@ public class main27 {
                 //cetak objek
                 for(int i=0; i < listK.length; i++){
                     System.out.println("============================================");
-                    System.out.println("Bangun Ruang Kerucut ke" + (i+1));
+                    System.out.println("Bangun Ruang Kerucut ke " + (i+1));
                     System.out.println("============================================");
                     System.out.println("Luas Permukaan ke "  + (i+1) + ": " + listK[i].hitungLP());
                     System.out.println("Volume ke "  + (i+1) + ": " + listK[i].hitungVolume());
@@ -57,7 +57,7 @@ public class main27 {
                     System.out.println("Bangun Ruang Bola ke " + (i+1));
                     System.out.println("============================================");
                     System.out.println("Luas Permukaan ke "  + (i+1) + ": " + listB[i].hitungLP());
-                    System.out.println("Volume ke"  + (i+1) + ": " + listB[i].hitungVolume());
+                    System.out.println("Volume ke "  + (i+1) + ": " + listB[i].hitungVolume());
                     
                 }
                 break;
@@ -82,7 +82,7 @@ public class main27 {
                 //cetak objek
                 for(int i=0; i < listL.length; i++){
                     System.out.println("============================================");
-                    System.out.println("Bangun Ruang Limas ke" + (i+1));
+                    System.out.println("Bangun Ruang Limas ke " + (i+1));
                     System.out.println("============================================");
                     System.out.println("Luas Permukaan: "  + (i+1) + ": " + listL[i].hitungLP());
                     System.out.println("Volume: "  + (i+1) + ": " + listL[i].hitungVolume());
