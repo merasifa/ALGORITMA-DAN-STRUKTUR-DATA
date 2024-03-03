@@ -129,7 +129,13 @@ hitungLuas() dan hitungKeliling().<br>
 
 2. 
 ## Kode
+![alt text](img/15.png)
+![alt text](img/16.png)
+## Hasil
+![alt text](<img/image5.png>)
+
+3.
+## Kode
 
 ## Hasil
-
 

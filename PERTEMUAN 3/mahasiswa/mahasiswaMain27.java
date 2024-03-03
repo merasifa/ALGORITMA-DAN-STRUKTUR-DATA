@@ -24,7 +24,7 @@ public class mahasiswaMain27 {
             sc.nextLine(); //  untuk menangkap newline
         }
         
-
+        System.out.println();
         for(int i=0; i < mhs.length; i++){
             System.out.println("Data Mahasiswa ke-" + (i+1));
             System.out.println("Nama :" + mhs[i].nama);
@@ -33,5 +33,9 @@ public class mahasiswaMain27 {
             System.out.println("IPK  :" + mhs[i].ipk);
    
         }
+        System.out.println();
+        mahasiswa27 rata = new mahasiswa27();
+        System.out.println("Rata IPK :" + rata.rataipk(mhs));
+        rata.terbesar(mhs);
 }
 }
