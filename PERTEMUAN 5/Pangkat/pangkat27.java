@@ -1,5 +1,5 @@
 public class pangkat27 {
-    public int nilai, angka;
+    public int nilai, pangkat;
 
     int pangkatBF( int a, int n){
         int hasil = 1; // menginisialisasi hasil ke 1
@@ -10,11 +10,11 @@ public class pangkat27 {
     }
 
     int pangkatDC (int a, int n){
-        if(n==1){
-            return a;
+        if(n==0){
+            return 1;
         }else{
             if(n%2==1){// bil ganjil
-                return (pangkatDC(a, n/2)* pangkatDC(a, n/2)*a);
+                return (pangkatDC(a, (n-1) / 2)* pangkatDC(a, (n-1) /2)*a);
             } else {
                 return (pangkatDC(a, n/2)* pangkatDC(a, n/2));
             }

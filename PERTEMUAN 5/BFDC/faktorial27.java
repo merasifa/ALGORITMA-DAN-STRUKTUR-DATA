@@ -1,10 +1,10 @@
 public class faktorial27 {
     public int nilai;
 
-    int faktorialBF(int n){
-        int fakto = 1;
-        for (int i = 1; i <= n; i++){
-            fakto = fakto * i;
+    int faktorialBF(int n){ 
+        int fakto = 1; // digunakan menyimpan hasil faktorial
+        for (int i = 1; i <= n; i++){ // perulangan dari 1 sampai nilai n
+            fakto = fakto * i; 
         }
         return fakto;
     }
