@@ -66,8 +66,8 @@ Variable mid digunakan untuk menentukan pembagian array menjadi dua bagian yang 
 Bagaimana cara menghitung sekaligus keuntungan beberapa bulan untuk beberapa
 perusahaan.(Setiap perusahaan bisa saja memiliki jumlah bulan berbeda-beda)? Buktikan
 dengan program!<br>
-
-
+![alt text](img/9.png)
+![alt text](img/image-10.png)
 ## 4.5 Latihan Praktikum 
 ![alt text](img/7.png)
 ![alt text](img/8.png)
