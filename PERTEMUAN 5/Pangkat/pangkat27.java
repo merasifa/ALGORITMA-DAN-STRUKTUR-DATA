@@ -1,6 +1,11 @@
 public class pangkat27 {
     public int nilai, pangkat;
 
+    public pangkat27(int nilai, int pangkat){
+        this.nilai = nilai;
+        this.pangkat = pangkat;
+    }
+
     int pangkatBF( int a, int n){
         int hasil = 1; // menginisialisasi hasil ke 1
         for(int i = 0; i < n; i++){

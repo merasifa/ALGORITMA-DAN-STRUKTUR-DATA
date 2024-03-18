@@ -27,6 +27,8 @@
 Perbedaanya terletak pada pemecahan masalahnya. If Else digunakan untuk mengevaluasi kondisi tertentu dan else digunakan ketika kondisi if tidak terpenuhi. Sedangkan Divide and Conquer membagi satu masalah menjadi sub masalah, dan kemudian sub masalah tersebut di pecahkan secara rekursif dan hasilnya digabung untuk mendapatkan solusi. 
 
 2. Apakah memungkinkan perulangan pada method faktorialBF() dirubah selain menggunakan for?Buktikan!<br>
+Memungkinkan. <br>
+![alt text](img/image-5.png)
 
 3. Jelaskan perbedaan antara fakto *= i; dan int fakto = n * faktorialDC(n-1); !<br>
 jadi fakto *= i, setiap iterasi loop langsung mengalikan nilai fakto dengan nilai i. Sedangkan int fakto = n * faktorialDC(n-1);, memanggil fungsi itu sendiri untuk menghitung nilai faktorial secara berulang sampai kasusnya terselesaikan.
@@ -41,11 +43,12 @@ jadi fakto *= i, setiap iterasi loop langsung mengalikan nilai fakto dengan nila
 pangkatBF() melakukan perhitungan berulang tanpa memecah masalahnya, sedangkan pangkatDC() membagi masalah menjadi submasalah yang lebih kecil untuk menghitung hasil pangkat.
 
 2. Apakah tahap combine sudah termasuk dalam kode tersebut?Tunjukkan!<br>
-
+![alt text](img/image-6.png)
 3. Modifikasi kode program tersebut, anggap proses pengisian atribut dilakukan dengan konstruktor.<br>
-
+![alt text](img/image-7.png)
+![alt text](img/image-8.png)
 4. Tambahkan menu agar salah satu method yang terpilih saja yang akan dijalankan menggunakan switch-case!<br>
-
+![alt text](img/image-9.png)
 
 ## 4.4 Menghitung Sum Array dengan Algoritma Brute Force dan Divide and Conquer
 ![alt text](img/5.png)
@@ -63,6 +66,7 @@ Variable mid digunakan untuk menentukan pembagian array menjadi dua bagian yang 
 Bagaimana cara menghitung sekaligus keuntungan beberapa bulan untuk beberapa
 perusahaan.(Setiap perusahaan bisa saja memiliki jumlah bulan berbeda-beda)? Buktikan
 dengan program!<br>
+
 
 ## 4.5 Latihan Praktikum 
 ![alt text](img/7.png)
