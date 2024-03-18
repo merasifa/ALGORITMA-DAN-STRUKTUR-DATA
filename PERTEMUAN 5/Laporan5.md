@@ -24,11 +24,12 @@
 ![alt text](img/image-1.png)
 ## 4.2.3 Pertanyaan
 1. Pada base line Algoritma Divide Conquer untuk melakukan pencarian nilai faktorial, jelaskan perbedaan bagian kode pada penggunaan if dan else!<br>
+Perbedaanya terletak pada pemecahan masalahnya. If Else digunakan untuk mengevaluasi kondisi tertentu dan else digunakan ketika kondisi if tidak terpenuhi. Sedangkan Divide and Conquer membagi satu masalah menjadi sub masalah, dan kemudian sub masalah tersebut di pecahkan secara rekursif dan hasilnya digabung untuk mendapatkan solusi. 
 
 2. Apakah memungkinkan perulangan pada method faktorialBF() dirubah selain menggunakan for?Buktikan!<br>
 
 3. Jelaskan perbedaan antara fakto *= i; dan int fakto = n * faktorialDC(n-1); !<br>
-
+jadi fakto *= i, setiap iterasi loop langsung mengalikan nilai fakto dengan nilai i. Sedangkan int fakto = n * faktorialDC(n-1);, memanggil fungsi itu sendiri untuk menghitung nilai faktorial secara berulang sampai kasusnya terselesaikan.
 
 ## 4.3 Menghitung Hasil Pangkat dengan Algoritma Brute Force dan Divide and Conquer
 ![alt text](img/3.png)
@@ -37,6 +38,7 @@
 ![alt text](img/image-2.png)
 ## 4.2.3 Pertanyaan
 1. Jelaskan mengenai perbedaan 2 method yang dibuat yaitu PangkatBF() dan PangkatDC()!<br>
+pangkatBF() melakukan perhitungan berulang tanpa memecah masalahnya, sedangkan pangkatDC() membagi masalah menjadi submasalah yang lebih kecil untuk menghitung hasil pangkat.
 
 2. Apakah tahap combine sudah termasuk dalam kode tersebut?Tunjukkan!<br>
 
@@ -53,8 +55,9 @@
 ## 4.2.3 Pertanyaan
 1. Mengapa terdapat formulasi return value berikut?Jelaskan!<br>
 ![alt text](img/image.png)
-
+Formulasi tersebut digunakan untuk menggabungkan total dari kedua submasalah kiri dan kanan dengan menambahkan nilai elemen tengah untuk mendapatkan total keseluruhan dari array.
 2. Kenapa dibutuhkan variable mid pada method TotalDC()?<br>
+Variable mid digunakan untuk menentukan pembagian array menjadi dua bagian yang seimbang.
 
 3. Program perhitungan keuntungan suatu perusahaan ini hanya untuk satu perusahaan saja.
 Bagaimana cara menghitung sekaligus keuntungan beberapa bulan untuk beberapa
@@ -62,3 +65,7 @@ perusahaan.(Setiap perusahaan bisa saja memiliki jumlah bulan berbeda-beda)? Buk
 dengan program!<br>
 
 ## 4.5 Latihan Praktikum 
+![alt text](img/7.png)
+![alt text](img/8.png)
+## HASIL
+![alt text](img/image-4.png)
