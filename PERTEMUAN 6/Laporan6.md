@@ -109,6 +109,7 @@ Class Mhs
 
 ## 5.2.2 Verifikasi Hasil Percobaan
 ![alt text](img/image-1.png)
+![alt text](img/image-2.png)
 
 ## 5.2.3 Pertanyaan
 1. Terdapat di method apakah proses bubble sort?
@@ -146,7 +147,7 @@ Class main
 
 
 ## 5.2.2 Verifikasi Hasil Percobaan
-
+![alt text](img/image-3.png)
 ## 5.2.3 Pertanyaan
 Di dalam method selection sort, terdapat baris program seperti di bawah ini:
 Untuk apakah proses tersebut, jelaskan!
@@ -175,7 +176,7 @@ class Main
 
 
 ## 5.2.2 Verifikasi Hasil Percobaan
-
+![alt text](img/image-4.png)
 ## 5.2.3 Pertanyaan
 Ubahlah fungsi pada InsertionSort sehingga fungsi ini dapat melaksanakan proses sorting
 dengan cara descending.
