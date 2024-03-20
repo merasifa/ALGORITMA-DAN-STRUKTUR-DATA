@@ -30,4 +30,20 @@ public class DaftarMhsPrestasi {
             }
         }
     }
-}
+
+    void selectionSort(){
+        for (int i=0; i<listMhs.length-1; i++){
+            int idxMin = i;
+            for (int j=i+1; j<listMhs.length; j++){
+                if(listMhs[j].ipk < listMhs [idxMin].ipk){ // proses membandingkan
+                    idxMin = j;
+                }
+            }
+                    //proses swap
+                    mahasiswa27 tmp = listMhs[idxMin];
+                    listMhs[idxMin] = listMhs [i];
+                    listMhs [i] = tmp;
+                }
+            }      
+    }
+
