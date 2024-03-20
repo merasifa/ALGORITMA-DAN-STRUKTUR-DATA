@@ -122,6 +122,27 @@ d. Jika banyak data di dalam listMhs adalah 50, maka berapakali perulangan i aka
 berlangsung? Dan ada berapa Tahap bubble sort yang ditempuh?
 
 ## 5.2 Mengurutkan Data Mahasiswa Berdasarkan IPK Menggunakan Selection Sort
+            void selectionSort(){
+               for (int i=0; i<listMhs.length-1; i++){
+                     int idxMin = i;
+                     for (int j=i+1; j<listMhs.length; j++){
+                        if(listMhs[j].ipk < listMhs [idxMin].ipk){ // proses membandingkan
+                           idxMin = j;
+                        }
+                     }
+                           //proses swap
+                           mahasiswa27 tmp = listMhs[idxMin];
+                           listMhs[idxMin] = listMhs [i];
+                           listMhs [i] = tmp;
+                        }
+                     }      
+            
+Class main
+
+                  System.out.println("Data mahasiswa setelah sorting asc berdasarkan ipk");
+                  list.selectionSort();
+                  list.tampil();
+
 
 
 ## 5.2.2 Verifikasi Hasil Percobaan
@@ -131,7 +152,26 @@ Di dalam method selection sort, terdapat baris program seperti di bawah ini:
 Untuk apakah proses tersebut, jelaskan!
 
 ## 5.2 Mengurutkan Data Mahasiswa Berdasarkan IPK Menggunakan  Insertion Sort
+Class DaftarMhsPrestasi
 
+            void insertionSort(){
+               for (int i=1; i<listMhs.length; i++){
+                     mahasiswa27 temp = listMhs[i];
+                     int j = i;
+                     while ( j < 0 && listMhs[j-1].ipk > temp.ipk) {
+                        listMhs[j] = listMhs[ j-1 ];
+                        j--;
+                     }
+                     listMhs[j] = temp;
+                     }
+            }
+
+
+class Main
+
+         System.out.println("Data mahasiswa setelah sorting insertion asc berdasarkan ipk");
+               list.selectionSort();
+               list.tampil();
 
 
 ## 5.2.2 Verifikasi Hasil Percobaan

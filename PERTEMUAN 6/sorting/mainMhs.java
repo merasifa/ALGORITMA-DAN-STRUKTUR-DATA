@@ -18,13 +18,16 @@ public class mainMhs {
         System.out.println("Data mahasiswa sebelum sorting = ");
         list.tampil();
 
-        System.out.println("Data mahasiswa setelah sorting desc berdasarkan ipk ");
+        System.out.println("Data mahasiswa setelah sorting bubble desc berdasarkan ipk ");
         list.bubbleSort();
         list.tampil();
 
-        System.out.println("Data mahasiswa setelah sorting asc berdasarkan ipk");
+        System.out.println("Data mahasiswa setelah sorting selection asc berdasarkan ipk");
         list.selectionSort();
         list.tampil();
 
+        System.out.println("Data mahasiswa setelah sorting insertion asc berdasarkan ipk");
+        list.insertionSort();
+        list.tampil();
     }
 }
