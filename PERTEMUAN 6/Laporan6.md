@@ -113,18 +113,33 @@ Class Mhs
 
 ## 5.2.3 Pertanyaan
 1. Terdapat di method apakah proses bubble sort?<br>
- 
+   Method bubble sort terdapat di method BubbleSort()
 2. Di dalam method bubbleSort(), terdapat baris program seperti di bawah ini:
+
+         if(listMhs[j].ipk > listMhs [j-1].ipk){ // proses membandingkan
+                           //proses swap
+                           mahasiswa27 tmp = listMhs[j];
+                           listMhs[j] = listMhs [j-1];
+                           listMhs [j-1] = tmp;
+
 Untuk apakah proses tersebut?<br>
+ Proses tersebut digunakan untuk mengurutkan elemen- elemen yang ada dlm sebuah list. 
+ Kode pada baris pertama merupakan kondisi if yang memeriksa apakah ipk mahasiswa ke j lebih besar dari ipk mahasiswa sebelumnya, jika iya proses swap dilakukan. <br>
+ Baris kedua, nilai dari listMhs[j] disalin ke dalam variabel sementara 'tmp'. <br>
+ Baris ketiga, nilai dari listMhs[j-1] ditukar dengan nilai listMhs[j]. <br>
+ Baris terakhir, nilai yg sebelumnya disalin di 'tmp', ditukar kembali dengan nilai yang semula berada diposisi listMhs[j-1], sehingga urutannya sudah sesuai<br>
 
 3. Perhatikan perulangan di dalam bubbleSort() di bawah ini:
 a. Apakah perbedaan antara kegunaan perulangan i dan perulangan j?<br>
-
+Perulangan i digunakan untuk membandingkan, dan perulangan j digunakan untuk proses sorting(swap).
 b. Mengapa syarat dari perulangan i adalah i<listMhs.length-1 ? <br>
+Agar tidak melampaui panjang array list
 
 c. Mengapa syarat dari perulangan j adalah j<listMhs.length-i ? <br>
+Karena pada saat iterasi i, elemen terakhir array list pasti sudah berada di posisi benar, dan kita tidak perlu membandingkannya disetiap iterasi.
 d. Jika banyak data di dalam listMhs adalah 50, maka berapakali perulangan i akan
 berlangsung? Dan ada berapa Tahap bubble sort yang ditempuh?<br>
+Perulangan i akan berlangsung selama 49 kali. Dan 49 tahap bubble sort
 
 
 ## 5.2 Mengurutkan Data Mahasiswa Berdasarkan IPK Menggunakan Selection Sort
@@ -155,7 +170,20 @@ Class main
 ![alt text](img/image-3.png)
 ## 5.2.3 Pertanyaan
 Di dalam method selection sort, terdapat baris program seperti di bawah ini:
+
+                     int idxMin = i;
+                     for (int j=i+1; j<listMhs.length; j++){
+                        if(listMhs[j].ipk < listMhs [idxMin].ipk){ // proses membandingkan
+                           idxMin = j;
+
 Untuk apakah proses tersebut, jelaskan!
+Pada baris pertama idxMin di inisialisasi dengan nilai i <br>
+Pada baris kedua terdapat perulangan for yang digunakan untuk mencari elemn minimun di bagian array yang belum terurut.<br>
+Pada baris ketiga pada setiap iterasi j, dilakukan perbandingan elemen j dengan elemen minimum, Jika elemen j lebih kecil dari elemen minimum maka idxMin diperbarui menjadi j.<br>
+Pada baris terakhir, jika elemen j lebih kecil dari elemen minimum, maka idxMin diperbarui menjadi j. Dan elemen j adalah elemen minimum yang baru.
+
+
+
 
 ## 5.2 Mengurutkan Data Mahasiswa Berdasarkan IPK Menggunakan  Insertion Sort
 Class DaftarMhsPrestasi
@@ -185,6 +213,10 @@ class Main
 ## 5.2.3 Pertanyaan
 Ubahlah fungsi pada InsertionSort sehingga fungsi ini dapat melaksanakan proses sorting
 dengan cara descending.
+### kode
+![alt text](img/image-8.png)
+### hasil
+![alt text](img/image-9.png)
 
 ## 5.5 Latihan Praktikum
 ### class hotel
