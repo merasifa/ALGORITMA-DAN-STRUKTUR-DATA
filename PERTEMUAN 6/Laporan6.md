@@ -112,15 +112,20 @@ Class Mhs
 ![alt text](img/image-2.png)
 
 ## 5.2.3 Pertanyaan
-1. Terdapat di method apakah proses bubble sort?
+1. Terdapat di method apakah proses bubble sort?<br>
+ 
 2. Di dalam method bubbleSort(), terdapat baris program seperti di bawah ini:
-Untuk apakah proses tersebut?
+Untuk apakah proses tersebut?<br>
+
 3. Perhatikan perulangan di dalam bubbleSort() di bawah ini:
-a. Apakah perbedaan antara kegunaan perulangan i dan perulangan j?
-b. Mengapa syarat dari perulangan i adalah i<listMhs.length-1 ?
-c. Mengapa syarat dari perulangan j adalah j<listMhs.length-i ?
+a. Apakah perbedaan antara kegunaan perulangan i dan perulangan j?<br>
+
+b. Mengapa syarat dari perulangan i adalah i<listMhs.length-1 ? <br>
+
+c. Mengapa syarat dari perulangan j adalah j<listMhs.length-i ? <br>
 d. Jika banyak data di dalam listMhs adalah 50, maka berapakali perulangan i akan
-berlangsung? Dan ada berapa Tahap bubble sort yang ditempuh?
+berlangsung? Dan ada berapa Tahap bubble sort yang ditempuh?<br>
+
 
 ## 5.2 Mengurutkan Data Mahasiswa Berdasarkan IPK Menggunakan Selection Sort
             void selectionSort(){
