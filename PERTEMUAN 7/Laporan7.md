@@ -1,0 +1,191 @@
+# <p align ="center">  LAPORAN PRAKTIKUM ALGORITMA DAN STRUKTUR DATA </p> 
+# <p align ="center">  JOBSHEET 6 </p> 
+<br><br><br><br>
+
+<p align="center">
+   <img src="https://static.wikia.nocookie.net/logopedia/images/8/8a/Politeknik_Negeri_Malang.png/revision/latest?cb=20190922202558" width="30%"> </p>
+
+<br><br><br><br><br>
+
+
+<p align = "center"> Nama : Tiara Mera Sifa </p>
+<p align = "center"> NIM  : 2341720247 </p>
+<p align = "center"> Prodi: D-IV Teknik Informatika</p>
+<p align = "center"> Kelas: 1B / 27 </p>
+
+<br><br><br><br><br>
+
+
+# Praktikum
+### 6.2. Searching / Pencarian Menggunakan Agoritma Sequential Search
+### class buku27
+
+      public class buku27 {
+         int kodeBuku, tahunTerbit, stock;
+         String judul, pengarang;
+
+         public buku27(int kodeBuku, String judul, int tahunTerbit, String pengarang, int stock){
+            this.kodeBuku =kodeBuku;
+            this.judul = judul;
+            this.tahunTerbit = tahunTerbit;
+            this.pengarang = pengarang;
+            this.stock = stock; 
+         }
+
+         void TampilDataBuku(){
+            System.out.println("============================");
+            System.out.println("Kode buku    :" + kodeBuku);
+            System.out.println("Judul        :" + judul);
+            System.out.println("Tahun Terbit :" + tahunTerbit);
+            System.out.println("Pengarang    :" + pengarang);
+            System.out.println("Stock        :" + stock);
+         }
+
+      }
+
+
+### class bukuMain27
+
+         import java.util.Scanner;
+
+         public class bukuMain27 {
+            public static void main(String[] args) {
+               Scanner s = new Scanner(System.in);
+               Scanner s1 = new Scanner(System.in);
+
+
+               pencarianBuku data = new pencarianBuku();
+               int jumlah = 5;
+
+
+               System.out.println("==================================================");
+               System.out.println("Masukkan data buku urut dari kode buku terkecil: ");
+               for(int i =0; i < jumlah; i++){
+                     System.out.println("==================================================");
+                     System.out.print("Kode Buku    \t: ");
+                     int kodeBuku = s.nextInt();
+                     System.out.print("Judul Buku   \t: ");
+                     String judul = s1.nextLine();
+                     System.out.print("Tahun Terbit \t: ");
+                     int tahunTerbit = s.nextInt();
+                     System.out.print("Pengarang   \t: ");
+                     String pengarang = s1.nextLine();
+                     System.out.print("Stock   \t: ");
+                     int stock = s.nextInt();
+
+
+                     buku27 m = new buku27(kodeBuku, judul, tahunTerbit, pengarang, stock);
+                     data.tambah(m);
+               };
+               System.out.println("====================================================");
+               System.out.println("Data Keseluruhan Buku");
+               data.tampil();
+
+               System.out.println("====================================================");
+               System.out.println("Pencarian data");
+               System.out.print("Masukkan kode buku yg dicari : ");
+               int cari = s.nextInt();
+               System.out.println(" Cari data menggunakan sequential seacrh");
+               int posisi = data.findSeqSearch(cari);
+               data.TampilPosisi(cari, posisi);
+               data.TampilData(cari, posisi);
+
+            }
+            
+         }
+
+
+### class pencarianBuku
+
+         public class pencarianBuku {
+            buku27[] listBuku = new buku27[5];
+            int idx;
+
+            void tambah(buku27 m){
+               if (idx < listBuku.length) {
+                     listBuku[idx] = m;
+                     idx++;     
+               } else {
+                     System.out.println("Data sudah penuh!");
+               }
+            }
+
+            void tampil(){
+               for(buku27 m : listBuku) {
+                     m.TampilDataBuku();
+               }
+            }
+
+            public int findSeqSearch (int cari){
+               int posisi = -1;
+               for (int j =0; j <listBuku.length; j++){
+                     if(listBuku[j].kodeBuku == cari){
+                        posisi = j;
+                        break;
+                     }
+               }
+               return posisi;
+            }
+
+            public void TampilPosisi(int x, int pos){
+               if (pos!= -1){
+                     System.out.println("Data : " + x +" ditemukan pada indeks "+ pos);
+               }else {
+                     System.out.println("Data " + x + "tidak ditemukan");
+               }
+            }
+
+            public void TampilData(int x, int pos){
+               if (pos!= -1) {
+                     System.out.println("Kode Buku\t : " + x);
+                     System.out.println("Judul\t\t :" +listBuku[pos].judul);
+                     System.out.println("Tahun Terbit\t :" +listBuku[pos].tahunTerbit);
+                     System.out.println("Pengarang\t :" +listBuku[pos].pengarang);
+                     System.out.println("Stock\t\t :" +listBuku[pos].stock);
+               }else {
+                     System.out.println("Data " + x + "tidak ditemukan");
+               }
+            }
+
+         }
+
+
+### 6.2.2. Verifikasi Hasil Percobaan
+![alt text](img/image.png)
+![alt text](img/image-1.png)
+![alt text](img/image-2.png)
+
+#### jika data ditemukan
+![alt text](image.png)
+#### jika data tidak ditemukan
+![alt text](image-1.png)
+
+
+### 6.2.3. Pertanyaan
+1. Jelaskan fungsi break yang ada pada method FindSeqSearch!
+2. Jika Data Kode Buku yang dimasukkan tidak terurut dari kecil ke besar. Apakah program masih
+dapat berjalan? Apakah hasil yang dikeluarkan benar? Tunjukkan hasil screenshoot untuk bukti
+dengan kode Buku yang acak. Jelaskan Mengapa hal tersebut bisa terjadi?
+3. Buat method baru dengan nama FindBuku menggunakan konsep sequential search dengan tipe
+method dari FindBuku adalah BukuNoAbsen. Sehingga Anda bisa memanggil method
+tersebut pada class BukuMain seperti gambar berikut :
+
+
+### 6.3. Searching / Pencarian Menggunakan Binary Search
+
+### 6.3.2. Verifikasi Hasil Percobaan
+
+### 6.3.3. Pertanyaan
+1. Tunjukkan pada kode program yang mana proses divide dijalankan!
+2. Tunjukkan pada kode program yang mana proses conquer dijalankan!
+4. Jika data Kode Buku yang dimasukkan tidak urut. Apakah program masih dapat berjalan? Mengapa
+demikian! Tunjukkan hasil screenshoot untuk bukti dengan kode Buku yang acak. Jelaskan
+Mengapa hal tersebut bisa terjadi?
+3. Jika Kode Buku yang dimasukkan dari Kode Buku terbesar ke terkecil (missal : 20215, 20214,
+20212, 20211, 20210) dan elemen yang dicari adalah 20210. Bagaimana hasil dari binary search?
+Apakah sesuai? Jika tidak sesuai maka ubahlah kode program binary seach agar hasilnya sesuai!
+
+### 6.4. Percobaan Pengayaan Divide and Conquer
+
+### 6.4.2. Verifikasi Hasil Percobaan
+

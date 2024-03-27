@@ -2,7 +2,7 @@ public class buku27 {
     int kodeBuku, tahunTerbit, stock;
     String judul, pengarang;
 
-    public buku27(int kodeBuku, String judul, int tahunTerbit, String Pengarang, int stock){
+    public buku27(int kodeBuku, String judul, int tahunTerbit, String pengarang, int stock){
        this.kodeBuku =kodeBuku;
        this.judul = judul;
        this.tahunTerbit = tahunTerbit;

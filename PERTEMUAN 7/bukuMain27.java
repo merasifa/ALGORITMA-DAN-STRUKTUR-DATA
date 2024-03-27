@@ -32,14 +32,15 @@ public class bukuMain27 {
         System.out.println("====================================================");
         System.out.println("Data Keseluruhan Buku");
         data.tampil();
-        
+
         System.out.println("====================================================");
         System.out.println("Pencarian data");
-        System.out.println("Masukkan kode buku yg dicari : ");
+        System.out.print("Masukkan kode buku yg dicari : ");
         int cari = s.nextInt();
         System.out.println(" Cari data menggunakan sequential seacrh");
         int posisi = data.findSeqSearch(cari);
         data.TampilPosisi(cari, posisi);
+        data.TampilData(cari, posisi);
 
     }
     
