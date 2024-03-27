@@ -155,9 +155,9 @@
 ![alt text](img/image-1.png)
 ![alt text](img/image-2.png)
 
-#### jika data ditemukan
+### jika data ditemukan
 ![alt text](image.png)
-#### jika data tidak ditemukan
+### jika data tidak ditemukan
 ![alt text](image-1.png)
 
 
@@ -173,7 +173,34 @@ tersebut pada class BukuMain seperti gambar berikut :
 
 ### 6.3. Searching / Pencarian Menggunakan Binary Search
 
+### class pencarianBuku
+
+         public int findBinarySearch(int cari, int left, int right) {
+               int mid;
+               if (right >= left) {
+                     mid = left + (right - left) / 2;
+                     if (cari == listBuku[mid].kodeBuku) {
+                        return mid;
+                     } else if (listBuku[mid].kodeBuku > cari) {
+                        return findBinarySearch(cari, left, mid);
+                     } else {
+                        return findBinarySearch(cari, mid, right);
+                     }
+               }
+               return -1;
+            }
+
+
+### class bukuMain27
+
+         System.out.println(" Cari data menggunakan binary seacrh");
+               posisi = data.findBinarySearch(cari, 0, jumlah - 1);
+               data.TampilPosisi(cari, posisi);
+               data.TampilData(cari, posisi);
+
+
 ### 6.3.2. Verifikasi Hasil Percobaan
+![alt text](image-2.png)
 
 ### 6.3.3. Pertanyaan
 1. Tunjukkan pada kode program yang mana proses divide dijalankan!

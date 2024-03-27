@@ -28,6 +28,22 @@ public class pencarianBuku {
         return posisi;
      }
 
+    public int findBinarySearch(int cari, int left, int right) {
+        int mid;
+        if (right >= left) {
+            mid = left + (right - left) / 2;
+            if (cari == listBuku[mid].kodeBuku) {
+                return mid;
+            } else if (listBuku[mid].kodeBuku > cari) {
+                return findBinarySearch(cari, left, mid);
+            } else {
+                return findBinarySearch(cari, mid, right);
+            }
+        }
+        return -1;
+    }
+
+
      public void TampilPosisi(int x, int pos){
         if (pos!= -1){
             System.out.println("Data : " + x +" ditemukan pada indeks "+ pos);
