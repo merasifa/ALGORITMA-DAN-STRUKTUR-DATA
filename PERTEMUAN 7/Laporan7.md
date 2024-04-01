@@ -228,8 +228,23 @@ tersebut pada class BukuMain seperti gambar berikut :
 ![alt text](img/image-5.png)
 
 ### 6.3.3. Pertanyaan
-1. Tunjukkan pada kode program yang mana proses divide dijalankan!
-2. Tunjukkan pada kode program yang mana proses conquer dijalankan!
+1. Tunjukkan pada kode program yang mana proses divide dijalankan!<br>
+
+         mid = left + (right - left) / 2;
+
+mid sebagai titik tengah dari pencarian antara left dan right
+2. Tunjukkan pada kode program yang mana proses conquer dijalankan!<br>
+
+         if (cari == listBuku[mid].kodeBuku) {
+            return mid; // Elemen ditemukan
+         } else if (listBuku[mid].kodeBuku > cari) {
+            return findBinarySearch(cari, left, mid - 1); // Cari di sebelah kiri
+         } else {
+            return findBinarySearch(cari, mid + 1, right); // Cari di sebelah kanan
+         }
+
+Proses conquer dijalankan ketika kita memilih bagian mana yang akan dicari selanjutnya, berdasarkan dari hasil sebelumnya.
+
 4. Jika data Kode Buku yang dimasukkan tidak urut. Apakah program masih dapat berjalan? Mengapa
 demikian! Tunjukkan hasil screenshoot untuk bukti dengan kode Buku yang acak. Jelaskan
 Mengapa hal tersebut bisa terjadi?
@@ -313,3 +328,16 @@ Apakah sesuai? Jika tidak sesuai maka ubahlah kode program binary seach agar has
 
 
 ### 6.5. Latihan Praktikum
+
+1. Modifikasi percobaan searching diatas dengan ketentuan berikut ini
+- Ubah tipe data dari kode Buku yang awalnya int menjadi String
+- Tambahkan method untuk pencarian kode Buku (bertipe data String) dengan menggunakan sequential search dan binary search.
+
+2. Modifikasi percobaan searching diatas dengan ketentuan berikut ini
+- Tambahkan method pencarian judul buku menggunakan sequential search dan binary 
+search. Sebelum dilakukan searching dengan binary search data harus dilakukan pengurutan 
+dengan menggunakan algoritma Sorting (bebas pilih algoritma sorting apapun)! Sehingga 
+ketika input data acak, maka algoritma searching akan tetap berjalan
+- Buat aturan untuk mendeteksi hasil pencarian judul buku yang lebih dari 1 hasil dalam 
+bentuk kalimat peringatan! Pastikan algoritma yang diterapkan sesuai dengan kasus yang 
+diberikan
