@@ -156,20 +156,45 @@
 ![alt text](img/image-2.png)
 
 ### jika data ditemukan
-![alt text](image.png)
+![alt text](img/image-3.png)
 ### jika data tidak ditemukan
-![alt text](image-1.png)
+![alt text](img/image-4.png)
 
 
 ### 6.2.3. Pertanyaan
-1. Jelaskan fungsi break yang ada pada method FindSeqSearch!
+1. Jelaskan fungsi break yang ada pada method FindSeqSearch!<br>
+break tersebut memberhentikan perulangan for, karena elemen yang dicari sudah ditemukan. Sehingga tidak perlu melanjutkan iterasi selanjutnya.
 2. Jika Data Kode Buku yang dimasukkan tidak terurut dari kecil ke besar. Apakah program masih
 dapat berjalan? Apakah hasil yang dikeluarkan benar? Tunjukkan hasil screenshoot untuk bukti
-dengan kode Buku yang acak. Jelaskan Mengapa hal tersebut bisa terjadi?
+dengan kode Buku yang acak. Jelaskan Mengapa hal tersebut bisa terjadi? <br>
+Iya program masih dapat berjalan, dan program yang dikeluarkan benar. Hal ini terjadi karena program hanya mencari indeks buku, jadi tidak perlu urut
+![alt text](image.png)
+![alt text](image-1.png)
+
+
 3. Buat method baru dengan nama FindBuku menggunakan konsep sequential search dengan tipe
 method dari FindBuku adalah BukuNoAbsen. Sehingga Anda bisa memanggil method
 tersebut pada class BukuMain seperti gambar berikut :
+### class pencarianBuku
 
+      public buku27 findBuku(int cari){
+            int posisi = -1;
+            for (int j =0; j <listBuku.length; j++){
+                  if(listBuku[j].kodeBuku == cari){
+                     posisi = j;
+                     break;
+                  }
+            }
+            return listBuku[posisi];
+         }
+
+### class main
+
+      buku27 dataBuku27 = data.findBuku(cari);
+            dataBuku27.TampilDataBuku();
+
+### hasil
+![alt text](image-2.png)
 
 ### 6.3. Searching / Pencarian Menggunakan Binary Search
 
@@ -200,7 +225,7 @@ tersebut pada class BukuMain seperti gambar berikut :
 
 
 ### 6.3.2. Verifikasi Hasil Percobaan
-![alt text](image-2.png)
+![alt text](img/image-5.png)
 
 ### 6.3.3. Pertanyaan
 1. Tunjukkan pada kode program yang mana proses divide dijalankan!
@@ -212,7 +237,79 @@ Mengapa hal tersebut bisa terjadi?
 20212, 20211, 20210) dan elemen yang dicari adalah 20210. Bagaimana hasil dari binary search?
 Apakah sesuai? Jika tidak sesuai maka ubahlah kode program binary seach agar hasilnya sesuai!
 
-### 6.4. Percobaan Pengayaan Divide and Conquer
+### 6.4. Percobaan Pengayaan Divide and Conquer / Merge Sort
+
+### class mergeSort27
+
+         public class mergeSort27 {
+
+            public void mergeSort27(int[] data){
+
+            }
+
+            public void merge(int[] data, int left, int middle, int right){
+               int[] temp = new int[data.length];
+               for (int i = left; i <= right; i++){
+                     temp[i] = data[i];
+               }
+               int a = left;
+               int b = middle + 1;
+               int c = left;
+
+               while (a <= middle && b <= right) {
+                     if (temp[a] <= temp[b]) {
+                        data [c] = temp [a];
+                        a++;
+                     } else {
+                        data[c] = temp[b];
+                        b++;
+                     }
+                     c++;
+               }
+               int s = middle - a + 1;
+               for (int i = 0; i <= s; i++){
+                     data[c + i]= temp[a + i];
+               }
+            }
+
+
+            public void sort(int data[], int left, int right){
+               if (left < right) {
+                     int middle = (left + right) / 2;
+                     sort(data, left, middle);
+                     sort(data, middle + 1, right);
+                     merge(data, left, middle, right);
+               }
+            }
+
+            public void printArray(int arr[]){
+               for (int i = 0; i < arr.length; i++){
+                     System.out.println(arr[i] + "");
+               }
+               System.out.println();
+            }
+
+         }
+
+
+### class mergeSort27Main
+
+         public class mergeSort27Main {
+            public static void main(String[] args) {
+               int data[] ={10,40,30,50,70,20,100,90};
+               System.out.println("Sorting dgn merge sort");
+               mergeSort27 mSort = new mergeSort27();
+               System.out.println("Data awal");
+               mSort.printArray(data);
+               mSort.sort(data, 0, data.length - 1); 
+
+               System.out.println("setelah diurutkan");
+               mSort.printArray(data);
+            }
+         }
 
 ### 6.4.2. Verifikasi Hasil Percobaan
+![alt text](img/image-6.png)
 
+
+### 6.5. Latihan Praktikum

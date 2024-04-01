@@ -1,6 +1,6 @@
 public class pencarianBuku {
     buku27[] listBuku = new buku27[5];
-     int idx;
+     int idx = 0;
 
      void tambah(buku27 m){
         if (idx < listBuku.length) {
@@ -35,9 +35,9 @@ public class pencarianBuku {
             if (cari == listBuku[mid].kodeBuku) {
                 return mid;
             } else if (listBuku[mid].kodeBuku > cari) {
-                return findBinarySearch(cari, left, mid);
+                return findBinarySearch(cari, left, mid -1);
             } else {
-                return findBinarySearch(cari, mid, right);
+                return findBinarySearch(cari, mid + 1, right);
             }
         }
         return -1;
@@ -63,5 +63,16 @@ public class pencarianBuku {
             System.out.println("Data " + x + "tidak ditemukan");
         }
      }
+
+     public buku27 findBuku(int cari){
+        int posisi = -1;
+        for (int j =0; j <listBuku.length; j++){
+            if(listBuku[j].kodeBuku == cari){
+                posisi = j;
+                break;
+            }
+        }
+        return listBuku[posisi];
+    }
 
 }
