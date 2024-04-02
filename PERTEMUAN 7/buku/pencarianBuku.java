@@ -17,10 +17,11 @@ public class pencarianBuku {
         }
      }
 
-     public int findSeqSearch (int cari){
+     public int findSeqSearch (String cari){
         int posisi = -1;
         for (int j =0; j <listBuku.length; j++){
-            if(listBuku[j].kodeBuku == cari){
+            // if(listBuku[j].kodeBuku == cari){
+                if(listBuku[j].kodeBuku.equals(cari)){
                 posisi = j;
                 break;
             }
@@ -28,13 +29,14 @@ public class pencarianBuku {
         return posisi;
      }
 
-    public int findBinarySearch(int cari, int left, int right) {
+    public int findBinarySearch(String cari, int left, int right) {
         int mid;
         if (right >= left) {
             mid = left + (right - left) / 2;
-            if (cari == listBuku[mid].kodeBuku) {
+            // if (cari == listBuku[mid].kodeBuku) {
+                if (cari.equals(listBuku[mid].kodeBuku)) {
                 return mid;
-            } else if (listBuku[mid].kodeBuku < cari) { // mengubah tanda perbandingan yg awalnya > menjadi <
+            } else if (listBuku[mid].kodeBuku.compareTo(cari)>0) { // mengubah tanda perbandingan yg awalnya > menjadi <
                 return findBinarySearch(cari, left, mid -1);
             } else {
                 return findBinarySearch(cari, mid + 1, right);
@@ -44,7 +46,7 @@ public class pencarianBuku {
     }
 
 
-     public void TampilPosisi(int x, int pos){
+     public void TampilPosisi(String x, int pos){
         if (pos!= -1){
             System.out.println("Data : " + x +" ditemukan pada indeks "+ pos);
         }else {
@@ -52,7 +54,7 @@ public class pencarianBuku {
         }
      }
 
-     public void TampilData(int x, int pos){
+     public void TampilData(String x, int pos){
         if (pos!= -1) {
             System.out.println("Kode Buku\t : " + x);
             System.out.println("Judul\t\t :" +listBuku[pos].judul);
@@ -64,10 +66,10 @@ public class pencarianBuku {
         }
      }
 
-     public buku27 findBuku(int cari){
+     public buku27 findBuku(String cari){
         int posisi = -1;
         for (int j =0; j <listBuku.length; j++){
-            if(listBuku[j].kodeBuku == cari){
+            if(listBuku[j].kodeBuku == cari ){
                 posisi = j;
                 break;
             }
@@ -75,4 +77,46 @@ public class pencarianBuku {
         return listBuku[posisi];
     }
 
+    public int findJudulSequential(String judul){
+        int posisi = -1;
+        for (int j =0; j <listBuku.length; j++){
+            // if(listBuku[j].kodeBuku == cari){
+                if(listBuku[j].judul.equals(judul)){
+                posisi = j;
+                break;
+            }
+        }
+        return posisi;
+    }
+
+    void bubbleSort(){
+        for (int i=0; i<listBuku.length-1; i++){
+            for (int j=1; j<listBuku.length-i; j++){
+                if(listBuku[j].judul.compareTo(listBuku [j-1].judul) > 0){ // proses membandingkan
+                    //proses swap
+                    buku27 tmp = listBuku[j];
+                    listBuku[j] = listBuku [j-1];
+                    listBuku [j-1] = tmp;
+                }
+            }
+        }
+    }
+
+    public int findJudulBinary(String judul, int left, int right) {
+        if (right >= left) {
+            int mid = left + (right -left) /2 ; // indeks tengah
+            int compare = listBuku[mid].judul.compareTo(judul); // membenaidngkan
+
+            if (compare == 0) {
+                return mid; // judul buku berada ditengah
+            } else if(compare >0){
+                return findJudulBinary(judul, left, mid - 1);// judul buku yg dicari berada di sebelah kiri
+            } else {
+                return findJudulBinary(judul, mid + 1, right); // judul buku yg dicari berada di sebelah kanan
+            }
+        }
+        return -1; // tidak ada
+    }
+
+    
 }

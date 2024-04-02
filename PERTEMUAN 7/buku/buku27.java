@@ -1,8 +1,8 @@
 public class buku27 {
-    int kodeBuku, tahunTerbit, stock;
-    String judul, pengarang;
+    int tahunTerbit, stock;
+    String kodeBuku, judul, pengarang;
 
-    public buku27(int kodeBuku, String judul, int tahunTerbit, String pengarang, int stock){
+    public buku27(String kodeBuku, String judul, int tahunTerbit, String pengarang, int stock){
        this.kodeBuku =kodeBuku;
        this.judul = judul;
        this.tahunTerbit = tahunTerbit;

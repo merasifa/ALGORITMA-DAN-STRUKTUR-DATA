@@ -383,7 +383,33 @@ output
 
 - Tambahkan method untuk pencarian kode Buku (bertipe data String) dengan menggunakan sequential search dan binary search.
 
+            public int findSeqSearch (String cari){
+               int posisi = -1;
+               for (int j =0; j <listBuku.length; j++){
+                     // if(listBuku[j].kodeBuku == cari){
+                        if(listBuku[j].kodeBuku.equals(cari)){
+                        posisi = j;
+                        break;
+                     }
+               }
+               return posisi;
+            }
 
+            public int findBinarySearch(String cari, int left, int right) {
+               int mid;
+               if (right >= left) {
+                     mid = left + (right - left) / 2;
+                     // if (cari == listBuku[mid].kodeBuku) {
+                        if (cari.equals(listBuku[mid].kodeBuku)) {
+                        return mid;
+                     } else if (listBuku[mid].kodeBuku.compareTo(cari)>0) { // mengubah tanda perbandingan yg awalnya > menjadi <
+                        return findBinarySearch(cari, left, mid -1);
+                     } else {
+                        return findBinarySearch(cari, mid + 1, right);
+                     }
+               }
+               return -1;
+            }
 
 
 2. Modifikasi percobaan searching diatas dengan ketentuan berikut ini
@@ -391,6 +417,94 @@ output
 search. Sebelum dilakukan searching dengan binary search data harus dilakukan pengurutan 
 dengan menggunakan algoritma Sorting (bebas pilih algoritma sorting apapun)! Sehingga 
 ketika input data acak, maka algoritma searching akan tetap berjalan
+
+### class pencarianBuku
+            public int findJudulSequential(String judul){
+               int posisi = -1;
+               for (int j =0; j <listBuku.length; j++){
+                     // if(listBuku[j].kodeBuku == cari){
+                        if(listBuku[j].judul.equals(judul)){
+                        posisi = j;
+                        break;
+                     }
+               }
+               return posisi;
+            }
+
+            void bubbleSort(){
+               for (int i=0; i<listBuku.length-1; i++){
+                     for (int j=1; j<listBuku.length-i; j++){
+                        if(listBuku[j].judul.compareTo(listBuku [j-1].judul) > 0){ // proses membandingkan
+                           //proses swap
+                           buku27 tmp = listBuku[j];
+                           listBuku[j] = listBuku [j-1];
+                           listBuku [j-1] = tmp;
+                        }
+                     }
+               }
+            }
+
+            public int findJudulBinary(String judul, int left, int right) {
+               if (right >= left) {
+                     int mid = left + (right -left) /2 ; // indeks tengah
+                     int compare = listBuku[mid].judul.compareTo(judul); // membenaidngkan
+
+                     if (compare == 0) {
+                        return mid; // judul buku berada ditengah
+                     } else if(compare >0){
+                        return findJudulBinary(judul, left, mid - 1);// judul buku yg dicari berada di sebelah kiri
+                     } else {
+                        return findJudulBinary(judul, mid + 1, right); // judul buku yg dicari berada di sebelah kanan
+                     }
+               }
+               return -1; // tidak ada dlm array
+            }
+
+
+### class bukuMain27
+
+         System.out.println("====================================================");
+               System.out.println("Data Keseluruhan Buku");
+               data.tampil();
+
+               System.out.println("====================================================");
+               System.out.println("Pilih Pencarian data");
+               System.out.println("1. Berdasarkan Kode");
+               System.out.println("2. Berdasarkan Judul");
+               System.out.print("Pilih :");
+               int pilih = s.nextInt();
+
+
+               if (pilih == 1) {
+                     System.out.print("Masukkan kode buku yg dicari : ");
+                     String cari = s1.nextLine();
+
+                     System.out.println(" Cari data menggunakan sequential search");
+                     int posisi = data.findSeqSearch(cari);
+                     data.TampilPosisi(cari, posisi);
+                     data.TampilData(cari, posisi);
+
+                     System.out.println(" Cari data menggunakan binary search");
+                     posisi = data.findBinarySearch(cari, 0, jumlah - 1);
+                     data.TampilPosisi(cari, posisi);
+                     data.TampilData(cari, posisi);
+                     
+               } else if(pilih == 2) {
+                     System.out.print("Masukkan Judul buku yg dicari : ");
+                     String cariJudul = s1.next();
+
+                     System.out.println(" Cari data menggunakan sequential search");
+                     int posisiJudulS = data.findSeqSearch(cariJudul);
+                     data.TampilPosisi(cariJudul, posisiJudulS);
+                     data.TampilData(cariJudul, posisiJudulS);
+
+                     System.out.println(" Cari data menggunakan binary search");
+                     int posisiJudulB = data.findBinarySearch(cariJudul, 0, jumlah - 1);
+                     data.TampilPosisi(cariJudul, posisiJudulB);
+                     data.TampilData(cariJudul, posisiJudulB);    
+               }
+               
+
 - Buat aturan untuk mendeteksi hasil pencarian judul buku yang lebih dari 1 hasil dalam 
 bentuk kalimat peringatan! Pastikan algoritma yang diterapkan sesuai dengan kasus yang 
 diberikan
