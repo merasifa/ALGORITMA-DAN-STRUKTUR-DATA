@@ -247,10 +247,36 @@ Proses conquer dijalankan ketika kita memilih bagian mana yang akan dicari selan
 
 4. Jika data Kode Buku yang dimasukkan tidak urut. Apakah program masih dapat berjalan? Mengapa
 demikian! Tunjukkan hasil screenshoot untuk bukti dengan kode Buku yang acak. Jelaskan
-Mengapa hal tersebut bisa terjadi?
+Mengapa hal tersebut bisa terjadi?<br>
+![alt text](image-4.png)
+![alt text](image-3.png)
+
+Program tetap berjalan, tapi hasil pencarian tidak dapat ditemukan, karena data yang dimasukkan tidak terurut.
 3. Jika Kode Buku yang dimasukkan dari Kode Buku terbesar ke terkecil (missal : 20215, 20214,
 20212, 20211, 20210) dan elemen yang dicari adalah 20210. Bagaimana hasil dari binary search?
-Apakah sesuai? Jika tidak sesuai maka ubahlah kode program binary seach agar hasilnya sesuai!
+Apakah sesuai? Jika tidak sesuai maka ubahlah kode program binary seach agar hasilnya sesuai!<br>
+Jika yang dimasukkan dari kode buku terbesar ke  terkecil maka hasil pencariannya tidak akan sesuai. Dikarenakan program dari terkecil ke terbesar, sehingga proses perbandingannya harus diubah.
+
+         public int findBinarySearch(int cari, int left, int right) {
+               int mid;
+               if (right >= left) {
+                     mid = left + (right - left) / 2;
+                     if (cari == listBuku[mid].kodeBuku) {
+                        return mid;
+                     } else if (listBuku[mid].kodeBuku < cari) { // mengubah tanda perbandingan yg awalnya > menjadi <
+                        return findBinarySearch(cari, left, mid -1);
+                     } else {
+                        return findBinarySearch(cari, mid + 1, right);
+                     }
+               }
+               return -1;
+            }
+
+output
+![alt text](image-5.png)
+![alt text](image-6.png)
+
+
 
 ### 6.4. Percobaan Pengayaan Divide and Conquer / Merge Sort
 
@@ -331,7 +357,34 @@ Apakah sesuai? Jika tidak sesuai maka ubahlah kode program binary seach agar has
 
 1. Modifikasi percobaan searching diatas dengan ketentuan berikut ini
 - Ubah tipe data dari kode Buku yang awalnya int menjadi String
+
+         public class buku27 {
+            int tahunTerbit, stock;
+            String kodeBuku, judul, pengarang;
+
+            public buku27(String kodeBuku, String judul, int tahunTerbit, String pengarang, int stock){
+               this.kodeBuku =kodeBuku;
+               this.judul = judul;
+               this.tahunTerbit = tahunTerbit;
+               this.pengarang = pengarang;
+               this.stock = stock; 
+            }
+
+            void TampilDataBuku(){
+               System.out.println("============================");
+               System.out.println("Kode buku    :" + kodeBuku);
+               System.out.println("Judul        :" + judul);
+               System.out.println("Tahun Terbit :" + tahunTerbit);
+               System.out.println("Pengarang    :" + pengarang);
+               System.out.println("Stock        :" + stock);
+            }
+
+         }
+
 - Tambahkan method untuk pencarian kode Buku (bertipe data String) dengan menggunakan sequential search dan binary search.
+
+
+
 
 2. Modifikasi percobaan searching diatas dengan ketentuan berikut ini
 - Tambahkan method pencarian judul buku menggunakan sequential search dan binary 
