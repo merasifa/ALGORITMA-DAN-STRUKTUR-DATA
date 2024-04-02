@@ -63,11 +63,37 @@ public class bukuMain27 {
             int posisiJudulS = data.findSeqSearch(cariJudul);
             data.TampilPosisi(cariJudul, posisiJudulS);
             data.TampilData(cariJudul, posisiJudulS);
+            int jmlSq = 0;
+            int jmlJudulS = 0;
+            for(buku27 buku : data.listBuku){
+                if (buku != null && buku.judul.equals(cariJudul)) {
+                    jmlJudulS++;
+                } 
+            }
+            if (jmlJudulS > 1){
+                System.out.println("Peringatan!! Terdapat judul buku yang sama !!");
+            } 
+            
+            
+
+
 
             System.out.println(" Cari data menggunakan binary search");
             int posisiJudulB = data.findBinarySearch(cariJudul, 0, jumlah - 1);
             data.TampilPosisi(cariJudul, posisiJudulB);
-            data.TampilData(cariJudul, posisiJudulB);    
+            data.TampilData(cariJudul, posisiJudulB);
+
+            int jmlJudulB = 0;
+            for(buku27 buku : data.listBuku){
+                if (buku != null && buku.judul.equals(cariJudul)) {
+                    jmlJudulB++;
+                } 
+            }
+            if (jmlJudulB > 1){
+                System.out.println("Peringatan!! Terdapat judul buku yang sama !!");
+            }   
+        } else {
+            System.out.println("tidak valid");
         }
         
 
