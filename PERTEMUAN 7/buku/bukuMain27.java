@@ -63,7 +63,6 @@ public class bukuMain27 {
             int posisiJudulS = data.findSeqSearch(cariJudul);
             data.TampilPosisi(cariJudul, posisiJudulS);
             data.TampilData(cariJudul, posisiJudulS);
-            int jmlSq = 0;
             int jmlJudulS = 0;
             for(buku27 buku : data.listBuku){
                 if (buku != null && buku.judul.equals(cariJudul)) {

@@ -91,28 +91,32 @@ public class pencarianBuku {
 
     void bubbleSort(){
         for (int i=0; i<listBuku.length-1; i++){
-            for (int j=1; j<listBuku.length-i; j++){
-                if(listBuku[j].judul.compareTo(listBuku [j-1].judul) > 0){ // proses membandingkan
+            for (int j=0; j<listBuku.length-i-1; j++){
+                if(listBuku[j].judul.compareTo(listBuku [j+1].judul) > 0){ // proses membandingkan
                     //proses swap
                     buku27 tmp = listBuku[j];
-                    listBuku[j] = listBuku [j-1];
-                    listBuku [j-1] = tmp;
+                    listBuku[j] = listBuku [j+1];
+                    listBuku [j+1] = tmp;
                 }
             }
         }
     }
 
-    public int findJudulBinary(String judul, int left, int right) {
-        if (right >= left) {
+    public int findJudulBinary(String judul) {
+        bubbleSort();
+        int left = 0;
+        int right = listBuku.length -1;
+
+        while (right >= left) {
             int mid = left + (right -left) /2 ; // indeks tengah
             int compare = listBuku[mid].judul.compareTo(judul); // membenaidngkan
 
             if (compare == 0) {
                 return mid; // judul buku berada ditengah
-            } else if(compare >0){
-                return findJudulBinary(judul, left, mid - 1);// judul buku yg dicari berada di sebelah kiri
+            } else if(compare > 0){
+                left = mid - 1;// judul buku yg dicari berada di sebelah kiri
             } else {
-                return findJudulBinary(judul, mid + 1, right); // judul buku yg dicari berada di sebelah kanan
+                right = mid + 1; // judul buku yg dicari berada di sebelah kanan
             }
         }
         return -1; // tidak ada

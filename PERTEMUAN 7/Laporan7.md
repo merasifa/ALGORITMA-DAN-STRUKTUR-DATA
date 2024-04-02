@@ -508,4 +508,37 @@ ketika input data acak, maka algoritma searching akan tetap berjalan
 - Buat aturan untuk mendeteksi hasil pencarian judul buku yang lebih dari 1 hasil dalam 
 bentuk kalimat peringatan! Pastikan algoritma yang diterapkan sesuai dengan kasus yang 
 diberikan
+### sequential
+         
+                     int jmlJudulS = 0;
+                     for(buku27 buku : data.listBuku){
+                        if (buku != null && buku.judul.equals(cariJudul)) {
+                           jmlJudulS++;
+                        } 
+                     }
+                     if (jmlJudulS > 1){
+                        System.out.println("Peringatan!! Terdapat judul buku yang sama !!");
+                     } 
 
+### binarry
+
+         int jmlJudulB = 0;
+                     for(buku27 buku : data.listBuku){
+                        if (buku != null && buku.judul.equals(cariJudul)) {
+                           jmlJudulB++;
+                        } 
+                     }
+                     if (jmlJudulB > 1){
+                        System.out.println("Peringatan!! Terdapat judul buku yang sama !!");
+                     }   
+
+
+### output
+![alt text](image-7.png)
+### berdasarkan judul
+![alt text](image-8.png)
+### berdasarkan kode
+![alt text](image-9.png)
+### judul buku lebih dari 1
+![alt text](image-11.png)
+![alt text](image-10.png)
