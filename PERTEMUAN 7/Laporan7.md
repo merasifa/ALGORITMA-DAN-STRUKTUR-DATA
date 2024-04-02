@@ -251,7 +251,8 @@ Mengapa hal tersebut bisa terjadi?<br>
 ![alt text](image-4.png)
 ![alt text](image-3.png)
 
-Program tetap berjalan, tapi hasil pencarian tidak dapat ditemukan, karena data yang dimasukkan tidak terurut.
+Program tetap berjalan, tapi hasil pencarian tidak dapat ditemukan, karena data yang dimasukkan tidak terurut.<br>
+
 3. Jika Kode Buku yang dimasukkan dari Kode Buku terbesar ke terkecil (missal : 20215, 20214,
 20212, 20211, 20210) dan elemen yang dicari adalah 20210. Bagaimana hasil dari binary search?
 Apakah sesuai? Jika tidak sesuai maka ubahlah kode program binary seach agar hasilnya sesuai!<br>
@@ -416,7 +417,7 @@ output
 - Tambahkan method pencarian judul buku menggunakan sequential search dan binary 
 search. Sebelum dilakukan searching dengan binary search data harus dilakukan pengurutan 
 dengan menggunakan algoritma Sorting (bebas pilih algoritma sorting apapun)! Sehingga 
-ketika input data acak, maka algoritma searching akan tetap berjalan
+ketika input data acak, maka algoritma searching akan tetap berjalan<br>
 
 ### class pencarianBuku
             public int findJudulSequential(String judul){
