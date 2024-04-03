@@ -248,3 +248,70 @@ barang teratas, serta dapat secara bebas menentukan kapasitas gudang!
 ![alt text](image-3.png)
 
 5. Commit dan push kode program ke Github
+
+## 2.2 Percobaan 2: Konversi Kode Barang ke Biner 
+### class stackKonversi27
+
+         public class StackKonversi27 {
+            int size, top;
+            int[] tumpukanBiner;
+
+            public StackKonversi27() {
+               this.size = 32; // asumsi 32 bit
+               tumpukanBiner = new int[size];
+               top = -1;
+            }
+
+            public boolean isEmpty(){
+               return top == -1;
+            }
+
+            public boolean isFull(){
+               return top == size;
+            }
+
+            public void push(int data) {
+               if (isFull()) {
+                     System.out.println("Stack Penuh!!");
+               } else {
+                     top++;
+                     tumpukanBiner[top] = data;
+               }
+            }
+
+            public int pop(){
+               if (isEmpty()) {
+                     System.out.println("Stack Kosong");
+                     return -1;
+               } else {
+                     int data = tumpukanBiner[top];
+                     top--;
+                     return data;
+               }
+            }
+         }
+
+### class gudang27
+
+         public String konversiDesimalkeBiner(int kode) {
+               StackKonversi27 stack = new StackKonversi27();
+               while (kode >0) {
+                     int sisa = kode % 2;
+                     stack.push(sisa);
+                     kode = kode / 2;
+               }
+               String biner = new String();
+               while (!stack.isEmpty()) {
+                     biner += stack.pop();
+               }
+               return biner;
+            }
+
+## 2.2.2Verifikasi Hasil Percobaan
+![alt text](image-4.png)
+## 2.2.3 Pertanyaan
+1. Pada method konversiDesimalKeBiner, ubah kondisi perulangan menjadi while (kode != 0),
+bagaimana hasilnya? Jelaskan alasannya!<br>
+
+2. Jelaskan alur kerja dari method konversiDesimalKeBiner!<br>
+Jadi diawali dengan while (kode > 0), jadi jika kode lebih dari 0 maka program dapat berjalan dan melakukan pembagian. lalu kode kita modulus dengan 2. dan jika memiliki sisa maka akan disimpan di stack.push(sisa). Lalu untuk string binner merupaka n tempat kita menyimpan angka biner yang dihasilkan. Untuk while(!stack.isEmpty()), jadi jika kotak masih berisi bilangan maka program dapat berjalan. Lalu untuk biner += stack.pop(); ini berarti kita mengambil angka paling atas lalu menuliskannya ditempat kosong tadi, dan kita lakukan sampai kotak kosong. Dan return merupakan hasil binner.
