@@ -58,7 +58,7 @@ public class Postfix27 {
     }
 
     public String konversi(String Q) {
-        String P =" ";
+        String P ="";
         char c;
         for (int i = 0; i < n; i++){
             c = Q.charAt(i);

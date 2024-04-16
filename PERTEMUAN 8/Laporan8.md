@@ -312,6 +312,130 @@ barang teratas, serta dapat secara bebas menentukan kapasitas gudang!
 ## 2.2.3 Pertanyaan
 1. Pada method konversiDesimalKeBiner, ubah kondisi perulangan menjadi while (kode != 0),
 bagaimana hasilnya? Jelaskan alasannya!<br>
-
+Hasilnya akan berubah, karena perulangan akan lanjut meskipun ketika nilai negatif 
 2. Jelaskan alur kerja dari method konversiDesimalKeBiner!<br>
 Jadi diawali dengan while (kode > 0), jadi jika kode lebih dari 0 maka program dapat berjalan dan melakukan pembagian. lalu kode kita modulus dengan 2. dan jika memiliki sisa maka akan disimpan di stack.push(sisa). Lalu untuk string binner merupaka n tempat kita menyimpan angka biner yang dihasilkan. Untuk while(!stack.isEmpty()), jadi jika kotak masih berisi bilangan maka program dapat berjalan. Lalu untuk biner += stack.pop(); ini berarti kita mengambil angka paling atas lalu menuliskannya ditempat kosong tadi, dan kita lakukan sampai kotak kosong. Dan return merupakan hasil binner.
+
+
+## 2.3 Percobaan 3: Konversi Notasi Infix ke Postfix
+### class postfix27.java
+
+         public class Postfix27 {
+            int n, top;
+            char[] stack;
+
+            public Postfix27(int total){
+               n = total;
+               top = -1;
+               stack = new char[n];
+               push('(');
+            }
+
+            public void push(char c){
+               top++;
+               stack[top] = c;
+            }
+
+            public char pop(){
+               char item = stack[top];
+               top--;
+               return item;
+            }
+
+            public boolean isOperand(char c){
+               if ((c >='A' && c <= 'Z') || (c >='a' && c <= 'z') ||
+                     (c >='0' && c <= '9') || (c >=' ' && c <= '.') ) {
+                        return true;
+                     } else {
+                        return false;
+                     }
+            }
+
+            public boolean isOperator(char c){
+               if (c == '^' || c == '%' || c == '/' || c == '*' || c == '-' || c == '+' ) {
+                     return true;
+               } else {
+                     return false;
+               }
+            }
+
+            public int derajat(char c){
+               switch (c) {
+                     case '^':
+                        return 3;
+                     case '%':
+                        return 2;
+                     case '/':
+                        return 2;
+                     case '*':
+                        return 2;
+                     case '-':
+                        return 1;
+                     case '+':
+                        return 1;
+                     default:
+                        return 0;
+
+               }
+            }
+
+            public String konversi(String Q) {
+               String P ="";
+               char c;
+               for (int i = 0; i < n; i++){
+                     c = Q.charAt(i);
+                     if (isOperand(c)) {
+                        P = P + c;
+                     }
+                     if (c == '(') {
+                        push(c);
+                     }
+                     if (c ==')') {
+                        while (stack[top] != '(') {
+                           P = P + pop ();
+                        }
+                        pop();
+                     }
+                     if (isOperator(c)) {
+                        while (derajat(stack[top]) >= derajat(c)) {
+                           P = P + pop();
+                        }
+                        push (c);
+                     }
+               }
+               return P;
+            }
+         }
+
+
+### class postfixMain
+
+         import java.util.Scanner;
+         public class PostfixMain {
+            public static void main(String[] args) {
+               Scanner sc = new Scanner(System.in);
+               String P, Q;
+               System.out.print("Masukkan ekspresi matematika(infix): ");
+               Q = sc.nextLine();
+               Q = Q.trim();
+               Q = Q + ")";
+               int total = Q.length();
+
+               Postfix27 post = new Postfix27(total);
+               P = post.konversi(Q);
+               System.out.println("Postfix: " + P);
+            }
+         }
+
+
+## 2.3.2 Verifikasi Hasil Percobaan
+
+
+
+## Latihan Praktikum
+![alt text](image-5.png)
+terbawah
+![alt text](image-6.png)
+cari kode
+![alt text](image-7.png)
+cari nama
