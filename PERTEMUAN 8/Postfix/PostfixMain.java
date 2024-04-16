@@ -7,6 +7,7 @@ public class PostfixMain {
         Q = sc.nextLine();
         Q = Q.trim();
         Q = Q + ")";
+        
         int total = Q.length();
 
         Postfix27 post = new Postfix27(total);

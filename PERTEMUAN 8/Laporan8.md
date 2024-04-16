@@ -430,12 +430,69 @@ Jadi diawali dengan while (kode > 0), jadi jika kode lebih dari 0 maka program d
 
 ## 2.3.2 Verifikasi Hasil Percobaan
 
+## 2.3.3 Pertanyaan
 
+1. Pada method derajat, mengapa return value beberapa case bernilai sama? Apabila return value diubah dengan nilai berbeda-beda setiap case-nya, apa yang terjadi? <br>
+karena beberapa karakter memiliki bobot yang sama, dan jika return value berubah maka urutan operator bisa jadi tidak sesuai, saat proses konversi
 
+2. Jelaskan alur kerja method konversi!
+- method konversi menerima sebuah string Q yang merupakan ekspresi infix
+- string P digunakan untuk menyimpan hasil konversi.
+- iterasi akan dilakukan dalam setiap karakter string Q.
+- jika operand maka langsung ditambahkan ke dalam string P.
+- jika tanda kurung buka, dimasukkan ke stack.
+- jika tanda kurung tutup, maka karakter dlm stack yang berada diatas kurung buka akan di tambahkan ke string P sampai tanda kurung tutup ditemukan.
+- jika operator, maka perbandingan akan dilakukan sesuai valuenya dan akan dimasukkan kedalam stack.
+- jika isi dari stack masi tersisa maka akan ditambahkan satu persatu ke dalam string P.
+- String P yang berisi postfix dikembalikan.
+
+3. Pada method konversi, apa fungsi dari potongan kode berikut?<br>
+mengambil karakter dari indeks i  dari string Q dan disimpan pada variabel c
 ## Latihan Praktikum
+
 ![alt text](image-5.png)
-terbawah
+
+### lihat barang terbawah
+
+         public Barang27 lihatBarangTerbawah(){
+               if (!cekKosong()) {
+                     Barang27 barangTerbawah = tumpukan[0];
+                     System.out.println("Barang terbawah: " + barangTerbawah.nama);
+                     return barangTerbawah;
+               } else {
+                     System.out.println("Tumpukan barang kosong");
+                     return null;
+               }
+            }
+
+
 ![alt text](image-6.png)
-cari kode
+### cari barang
+
+         public Barang27 cariBarangKode( int kodeBrg){
+               //kode
+               for (int i = 0; i <= top; i++) {
+                     if (kodeBrg != -1 && tumpukan[i].kode == kodeBrg) {
+                        System.out.println("Barang dengan kode " 
+                        + kodeBrg + " ditemukan: " + tumpukan[i].nama);
+                        return tumpukan[i];
+                     }
+               }
+               System.out.println("Barang dengan kode " + kodeBrg + " tidak ditemukan.");
+               return null;
+            }
+
+            public Barang27 cariBarangNama (String namaBrg){
+               for (int i = 0; i <= top; i++) {
+                     if (namaBrg != null && tumpukan[i].nama.equals(namaBrg)) {
+                        System.out.println("Barang dengan nama " 
+                        + namaBrg + " ditemukan: " + tumpukan[i].nama);
+                        return tumpukan[i];
+                     }
+               }
+               System.out.println("Barang dengan nama " + namaBrg + " tidak ditemukan.");
+               return null;
+            }
+            
 ![alt text](image-7.png)
-cari nama
+

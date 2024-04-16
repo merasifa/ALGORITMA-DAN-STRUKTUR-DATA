@@ -109,10 +109,10 @@ public class Gudang27 {
 
     public Barang27 cariBarangNama (String namaBrg){
         for (int i = 0; i <= top; i++) {
-            if (namaBrg != null && tumpukan[j].nama.equals(namaBrg)) {
+            if (namaBrg != null && tumpukan[i].nama.equals(namaBrg)) {
                 System.out.println("Barang dengan nama " 
-                + namaBrg + " ditemukan: " + tumpukan[j].nama);
-                return tumpukan[j];
+                + namaBrg + " ditemukan: " + tumpukan[i].nama);
+                return tumpukan[i];
             }
         }
         System.out.println("Barang dengan nama " + namaBrg + " tidak ditemukan.");

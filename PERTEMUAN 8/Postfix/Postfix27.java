@@ -60,7 +60,7 @@ public class Postfix27 {
     public String konversi(String Q) {
         String P ="";
         char c;
-        for (int i = 0; i < n; i++){
+        for (int i = 0; i < stack.length; i++){
             c = Q.charAt(i);
             if (isOperand(c)) {
                 P = P + c;
@@ -70,7 +70,7 @@ public class Postfix27 {
             }
             if (c ==')') {
                 while (stack[top] != '(') {
-                    P = P + pop ();
+                    P = P + pop();
                 }
                 pop();
             }
@@ -78,7 +78,7 @@ public class Postfix27 {
                 while (derajat(stack[top]) >= derajat(c)) {
                     P = P + pop();
                 }
-                push (c);
+                push(c);
             }
         }
         return P;
