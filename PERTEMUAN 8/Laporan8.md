@@ -427,9 +427,6 @@ Jadi diawali dengan while (kode > 0), jadi jika kode lebih dari 0 maka program d
             }
          }
 
-
-## 2.3.2 Verifikasi Hasil Percobaan
-
 ## 2.3.3 Pertanyaan
 
 1. Pada method derajat, mengapa return value beberapa case bernilai sama? Apabila return value diubah dengan nilai berbeda-beda setiap case-nya, apa yang terjadi? <br>
