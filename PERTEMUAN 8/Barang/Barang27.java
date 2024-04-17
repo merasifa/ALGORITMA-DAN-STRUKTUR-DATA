@@ -1,5 +1,3 @@
-
-
 public class Barang27 {
     int kode;
     String nama, kategori;
