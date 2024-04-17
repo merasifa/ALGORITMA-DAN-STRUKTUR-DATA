@@ -41,49 +41,43 @@ public class utsmain {
     listUTS.tambah(ujian17);
 
     // tampil data sblm urut
-    System.out.println("Sebelum diurutkan");
+    System.out.println("Data Sebelum diurutkan");
     listUTS.tampil();
     System.out.println();
 
-    // pencarian data sblm urut
-    System.out.print("Masukkan nilai yang dicari: ");
-    int nilaiCari = sc.nextInt();
-    
-    int nilaiHasil = listUTS.findBinarySearchAscen(nilaiCari, 0, listUTS.listUTS.length - 1);
-    if (nilaiCari != -1) {
-        System.out.println("Nilai"+ nilaiCari + "ditemukan pada indeks " + nilaiHasil );
-    } else {
-        System.out.println("Nilai tidak ditemukan");
-    }
+    System.out.print("Masukkan data yang akan dicari: ");
+        int cari = sc.nextInt();
 
-    System.out.println("Nilai diurutkan secara ascending");
-    listUTS.selectionSortAssending();
-    listUTS.tampil();
-    System.out.print("Masukkan nilai yang ingin dicari: ");
-    int nilaiCariAscending = sc.nextInt();
-
-    int hasilPencarianAscending = listUTS.findBinarySearchAscen(nilaiCari, 0, listUTS.listUTS.length - 1);
-        if (hasilPencarianAscending != -1) {
-            System.out.println("Nilai " + nilaiCari + " ditemukan pada indeks ke" + nilaiHasil);
+    System.out.println("Hasil Sebelum diurutkan");
+        int posisiSebelum = listUTS.findBinarySearchAscen(cari, 0, listUTS.listUTS.length - 1);
+        if (posisiSebelum != -1) {
+            System.out.println("Berada di index ke " + (posisiSebelum + 1));
         } else {
-            System.out.println("Nilai " + nilaiCari + " tidak ditemukan setelah diurutkan secara ascending.");
+             System.out.println("Data tidak ditemukan");
+}
+
+    System.out.println("Hasil setelah Ascending");
+        listUTS.selectionSortAssending();
+        listUTS.tampil();
+        int posisiAscending = listUTS.findBinarySearchAscen(cari, 0, listUTS.listUTS.length - 1);
+        if (posisiAscending != -1) {
+            System.out.println("Berada di index ke " + (posisiAscending));
+        } else {
+            System.out.println("Data tidak ditemukan setelah diurutkan secara ascending.");
         }
 
-    System.out.println("Nilai diurutkan secara descending");
-    listUTS.selectionSortDescending();
-    listUTS.tampil();
 
-    System.out.print("Masukkan nilai yang ingin dicari: ");
-    int nilaiCariDescending = sc.nextInt();
-
-    int hasilPencarianDescending = listUTS.findBinarySearchDescen(nilaiCari, 0, listUTS.listUTS.length - 1);
-        if (hasilPencarianAscending != -1) {
-            System.out.println("Nilai " + nilaiCariDescending + " ditemukan pada indeks ke" + nilaiHasil);
+        System.out.println("Hasil setelah Descending");
+        listUTS.selectionSortDescending();
+        listUTS.tampil();
+        int posisiDescending = listUTS.findBinarySearchDescen(cari, 0, listUTS.listUTS.length - 1);
+        if (posisiDescending != -1) {
+            System.out.println("Berada di index ke " + (posisiDescending));
         } else {
-            System.out.println("Nilai " + nilaiCariDescending + " tidak ditemukan setelah diurutkan secara ascending.");
+            System.out.println("Data tidak ditemukan setelah diurutkan secara descending.");
         }
-    }
 
+    }
 
     }
 

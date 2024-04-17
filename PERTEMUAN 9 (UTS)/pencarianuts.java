@@ -25,8 +25,9 @@ public class pencarianuts {
 
      public int findBinarySearchAscen(int cari, int left, int right){
         int mid;
+        mid = left + (right - left) / 2;
         if (right >= left){
-            mid = left + (right - left) / 2;
+
             
             if (cari == listUTS[mid].nilai) {
                 return mid;
@@ -42,22 +43,21 @@ public class pencarianuts {
         return -1;
     }
 
-    public int findBinarySearchDescen(int cari, int left, int right){
-        int mid;
-        if (right >= left){
-            mid = left + (right - left) / 2;
-            
-            if (cari == listUTS[mid].nilai) {
+    public int findBinarySearchDescen(int cari, int left, int right) {
+        if (right >= left) {
+            int mid = left + (right - left) / 2;
+    
+            if (listUTS[mid].nilai == cari) {
                 return mid;
             }
-            
-            if (cari < listUTS[mid].nilai) {
+    
+            if (listUTS[mid].nilai < cari) {
                 return findBinarySearchDescen(cari, left, mid - 1);
             }
-            
+    
             return findBinarySearchDescen(cari, mid + 1, right);
         }
-        
+    
         return -1;
     }
 
@@ -76,19 +76,20 @@ public class pencarianuts {
                 }
     }
 
-    void selectionSortDescending(){
-        for (int i=0; i<listUTS.length-1; i++){
+    void selectionSortDescending() {
+        for (int i = 0; i < listUTS.length - 1; i++) {
             int idxMax = i;
-            for (int j=i+1; j<listUTS.length; j++){
-                if(listUTS[j].nilai > listUTS [idxMax].nilai){ // proses membandingkan
+            for (int j = i + 1; j < listUTS.length; j++) {
+                if (listUTS[j].nilai > listUTS[idxMax].nilai) { // proses membandingkan
                     idxMax = j;
                 }
             }
-                    //proses swap
-                    uts tmp = listUTS[idxMax];
-                    listUTS[idxMax] = listUTS [i];
-                    listUTS[i] = tmp;
-                }
+            // proses swap 
+            uts tmp = listUTS[idxMax];
+            listUTS[idxMax] = listUTS[i];
+            listUTS[i] = tmp;
+        }
     }
+
     
 }
