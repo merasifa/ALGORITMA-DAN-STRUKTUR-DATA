@@ -106,7 +106,7 @@ public class QueuePembeli27 {
         System.out.println("1. Antrian baru");
         System.out.println("2. Antrian keluar");
         System.out.println("3. Cek Antrian terdepan");
-        System.out.println("4.Cek semua  antrian");
+        System.out.println("4. Cek semua antrian");
         System.out.println("5. Cek antrian belakang");
         System.out.println("6. Cari posisi pembeli");
         System.out.println("7. Keluar");

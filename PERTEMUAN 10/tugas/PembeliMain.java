@@ -18,7 +18,7 @@ public class PembeliMain {
                 case 1:
                     System.out.print("Nama : ");
                     String nama = sc277.nextLine();
-                    System.out.print("No HP : ");
+                    System.out.print("NO HP : ");
                     int noHP = sc27.nextInt();
                     pembeli27 nb = new pembeli27(nama, noHP);
                     Q.Enqueue(nb);
