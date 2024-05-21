@@ -81,25 +81,6 @@ public class Queue227 {
         }
     }
 
-    // public nasabah27 Dequeue() {
-    //     nasabah27 dt = new nasabah27();
-    //     if (IsEmpty()) {
-    //         System.out.println("Queue masih kosong");
-    //     } else {
-    //         dt = data[front];
-    //         size--;
-    //         if (IsEmpty()) {
-    //             front = rear = -1;
-    //         } else {
-    //             if (front == max -1) {
-    //                 front = 0;
-    //             } else {
-    //                 front++;
-    //             }
-    //         }
-    //     }
-    //     return dt;
-    // }
     public nasabah27 Dequeue() {
         if (IsEmpty()) {
             System.out.println("Queue masih kosong");
