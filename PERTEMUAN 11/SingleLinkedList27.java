@@ -1,5 +1,5 @@
 public class SingleLinkedList27 {
-    Node27 head, tail;
+    Node227 head, tail;
 
     boolean isEmpty() {
         return head == null;
@@ -9,7 +9,7 @@ public class SingleLinkedList27 {
         if (isEmpty()) {
             System.out.println("Linked List kosong");
         } else {
-            Node27 tmp = head;
+            Node227 tmp = head;
             System.out.print("Isi Linked List \t");
             while (tmp != null) {
                 System.out.print(tmp.data + "\t");
@@ -20,7 +20,7 @@ public class SingleLinkedList27 {
     }
 
     void addFirst(int input) {
-        Node27 ndInput = new Node27(input, null);
+        Node227 ndInput = new Node27(input, null);
         if (isEmpty()) {
             head = ndInput;
             tail = ndInput;
@@ -31,7 +31,7 @@ public class SingleLinkedList27 {
     }
 
     void addLast(int input) {
-        Node27 ndInput = new Node27(input, null);
+        Node227 ndInput = new Node27(input, null);
         if (isEmpty()) {
             head = ndInput;
             tail = ndInput;
@@ -42,8 +42,8 @@ public class SingleLinkedList27 {
     }
 
     void insertAfter(int key, int input) {
-        Node27 ndInput = new Node27(input, null);
-        Node27 temp = head;
+        Node227 ndInput = new Node27(input, null);
+        Node227 temp = head;
         while (temp != null) {
             if (temp.data == key) {
                 ndInput.next = temp.next;
@@ -58,13 +58,13 @@ public class SingleLinkedList27 {
     }
 
     void insertAt(int index, int input) {
-        Node27 ndInput = new Node27(input, null);
+        Node227 ndInput = new Node27(input, null);
         if (index < 0) {
             System.out.println("Perbaiki logikanya! Kalau indeksnya -1 bagaimana??");
         } else if (index == 0) {
             addFirst(input);
         } else {
-            Node27 temp = head;
+            Node227 temp = head;
             for (int i = 0; i < index - 1 && temp != null; i++) {
                 temp = temp.next;
             }
@@ -81,7 +81,7 @@ public class SingleLinkedList27 {
     }
 
     int getData(int index){
-        Node27 tmp = head;
+        Node227 tmp = head;
         for (int i = 0; i < index ; i++){
             tmp = tmp.next;
         }
@@ -89,7 +89,7 @@ public class SingleLinkedList27 {
     }
 
     int indexOf(int key){
-        Node27 tmp = head;
+        Node227 tmp = head;
         int index = 0;
         while (tmp != null && tmp.data != key){
             tmp = tmp.next;
@@ -118,7 +118,7 @@ public class SingleLinkedList27 {
             if(head == tail){
                 head = tail = null;
             }else{
-                Node27 temp = head;
+                Node227 temp = head;
                 while(temp.next != tail){
                     temp = temp.next;
                 }
@@ -136,7 +136,7 @@ public class SingleLinkedList27 {
             if(head.data == key){
                 removeFirst();
             }else{
-                Node27 temp = head;
+                Node227 temp = head;
                 while(temp.next != null && temp.next.data != key){
                     temp = temp.next;
                 }
@@ -160,7 +160,7 @@ public class SingleLinkedList27 {
         }else if(index == indexOf(tail.data)){
             removeLast();
         }else{
-            Node27 temp = head;
+            Node227 temp = head;
             for(int i = 0; i < index -1; i++){
                 temp = temp.next;
             }
