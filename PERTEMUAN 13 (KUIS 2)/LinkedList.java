@@ -1,33 +1,20 @@
 public class LinkedList {
     Node head;
-    int size;
+    Node tail;
 
     public LinkedList() {
-        this.head = null;
-        this.size = 0;
+        head = null;
+        tail = null;
     }
 
-    public void tambahPertama(Tim tim) {
+    public void addTim(Tim tim) {
         Node newNode = new Node(tim);
-        newNode.next = head;
-        head = newNode;
-        size++;
-    }
-
-    public void tambahTerakhir(Tim tim) {
         if (head == null) {
-            tambahPertama(tim);
-            return;
+            head = tail = newNode;
+        } else {
+            tail.next = newNode;
+            tail = newNode;
         }
-
-        Node current = head;
-        while (current.next != null) {
-            current = current.next;
-        }
-
-        Node newNode = new Node(tim);
-        current.next = newNode;
-        size++;
     }
 
     public void updateKlasemen(int[] hasil) {
@@ -58,7 +45,7 @@ public class LinkedList {
         urutkanKlasemen();
     }
 
-    private Tim cariTim(int index) {
+    public Tim cariTim(int index) {
         Node current = head;
         for (int i = 0; i < index; i++) {
             if (current == null) {
@@ -69,7 +56,24 @@ public class LinkedList {
         return current.tim;
     }
 
-    private void urutkanKlasemen() {
+    public void tampilkanHasil(int[] hasil) {
+        System.out.printf("%-25s | %-25s | %s%n", "Tim Kandang", "Tim Tandang", "Skor");
+        System.out.println("-----------------------------------------------------------");
+        for (int i = 0; i < hasil.length; i += 4) {
+            int indexKandang = hasil[i];
+            int indexTandang = hasil[i + 1];
+            int golKandang = hasil[i + 2];
+            int golTandang = hasil[i + 3];
+    
+            Tim timKandang = cariTim(indexKandang);
+            Tim timTandang = cariTim(indexTandang);
+
+            System.out.printf("%-25s | %-25s | %d - %d%n",
+                    timKandang.nama, timTandang.nama, golKandang, golTandang);
+        }
+    }
+
+    public void urutkanKlasemen() {
         if (head == null || head.next == null) {
             return;
         }
@@ -115,20 +119,5 @@ public class LinkedList {
         }
     }
 
-    public void tampilkanHasil(int[] hasil) {
-        System.out.printf("%-25s | %-25s | %s%n", "Tim Kandang", "Tim Tandang", "Skor");
-        System.out.println("-----------------------------------------------------------");
-        for (int i = 0; i < hasil.length; i += 4) {
-            int indexKandang = hasil[i];
-            int indexTandang = hasil[i + 1];
-            int golKandang = hasil[i + 2];
-            int golTandang = hasil[i + 3];
-    
-            Tim timKandang = cariTim(indexKandang);
-            Tim timTandang = cariTim(indexTandang);
 
-            System.out.printf("%-25s | %-25s | %d - %d%n",
-                    timKandang.nama, timTandang.nama, golKandang, golTandang);
-        }
-    }
 }

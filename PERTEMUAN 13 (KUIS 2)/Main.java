@@ -5,29 +5,29 @@ public class Main {
     public static void main(String[] args) {
         LinkedList table = new LinkedList();
 
-        table.tambahPertama(new Tim("Manchester City"));
-        table.tambahPertama(new Tim("Liverpool"));
-        table.tambahPertama(new Tim("Chelsea"));
-        table.tambahPertama(new Tim("Tottenham Hotspur"));
-        table.tambahPertama(new Tim("Arsenal"));
-        table.tambahPertama(new Tim("Manchester United"));
-        table.tambahPertama(new Tim("West Ham United"));
-        table.tambahPertama(new Tim("Leicester City"));
-        table.tambahPertama(new Tim("Wolverhampton Wanderers"));
-        table.tambahPertama(new Tim("Brighton & Hove Albion"));
-        table.tambahPertama(new Tim("Brentford"));
-        table.tambahPertama(new Tim("Crystal Palace"));
-        table.tambahPertama(new Tim("Everton"));
-        table.tambahPertama(new Tim("Southampton"));
-        table.tambahPertama(new Tim("Leeds United"));
-        table.tambahPertama(new Tim("Aston Villa"));
-        table.tambahPertama(new Tim("Newcastle United"));
-        table.tambahPertama(new Tim("Nottingham Forest"));
-        table.tambahPertama(new Tim("Fulham"));
-        table.tambahTerakhir(new Tim("Burnley"));
+        table.addTim(new Tim("Manchester City"));
+        table.addTim(new Tim("Liverpool"));
+        table.addTim(new Tim("Chelsea"));
+        table.addTim(new Tim("Tottenham Hotspur"));
+        table.addTim(new Tim("Arsenal"));
+        table.addTim(new Tim("Manchester United"));
+        table.addTim(new Tim("West Ham United"));
+        table.addTim(new Tim("Leicester City"));
+        table.addTim(new Tim("Wolverhampton Wanderers"));
+        table.addTim(new Tim("Brighton & Hove Albion"));
+        table.addTim(new Tim("Brentford"));
+        table.addTim(new Tim("Crystal Palace"));
+        table.addTim(new Tim("Everton"));
+        table.addTim(new Tim("Southampton"));
+        table.addTim(new Tim("Leeds United"));
+        table.addTim(new Tim("Aston Villa"));
+        table.addTim(new Tim("Newcastle United"));
+        table.addTim(new Tim("Nottingham Forest"));
+        table.addTim(new Tim("Fulham"));
+        table.addTim(new Tim("Burnley"));
 
         int[] matchResults = {
-            2, 1, 2, 1, // Manchester City 2 - 1 Liverpool
+        0, 1, 2, 1, // Manchester City 2 - 1 Liverpool
         1, 2, 1, 1, // Chelsea 1 - 1 Tottenham Hotspur
         3, 4, 3, 0, // Arsenal 3 - 0 Manchester United
         2, 5, 2, 2, // West Ham United 2 - 2 Leicester City
@@ -61,7 +61,6 @@ public class Main {
             System.out.println("2. Tampilkan Hasil Pertandingan");
             System.out.println("3. Keluar");
             System.out.print("Pilihan Anda: ");
-
             pilihan = scanner.nextInt();
 
             switch (pilihan) {
