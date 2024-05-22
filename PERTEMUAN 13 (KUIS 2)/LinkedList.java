@@ -17,97 +17,41 @@ public class LinkedList {
         }
     }
 
-    public void updateKlasemen(int[] hasil) {
-        for (int i = 0; i < hasil.length; i += 4) {
-            int indexKandang = hasil[i];
-            int indexTandang = hasil[i + 1];
-            int golKandang = hasil[i + 2];
-            int golTandang = hasil[i + 3];
 
-            Tim timKandang = cariTim(indexKandang);
-            Tim timTandang = cariTim(indexTandang);
-
-            timKandang.updateSelisihGol(golKandang, golTandang);
-            timTandang.updateSelisihGol(golTandang, golKandang);
-
-            if (golKandang > golTandang) {
-                timKandang.updatePoin(3); // Menang
-                timTandang.updatePoin(0); // Kalah
-            } else if (golKandang == golTandang) {
-                timKandang.updatePoin(1); // Seri
-                timTandang.updatePoin(1); // Seri
-            } else {
-                timKandang.updatePoin(0); // Kalah
-                timTandang.updatePoin(3); // Menang
-            }
-        }
-
-        urutkanKlasemen();
-    }
-
-    public Tim cariTim(int index) {
+    public Tim cariTim(String nama) {
         Node current = head;
-        for (int i = 0; i < index; i++) {
-            if (current == null) {
-                throw new IllegalArgumentException("Indeks diluar batas");
+        while (current != null) {
+            if (current.tim.nama.equalsIgnoreCase(nama)) {
+                return current.tim;
             }
             current = current.next;
         }
-        return current.tim;
+        return null;
     }
 
-    public void tampilkanHasil(int[] hasil) {
-        System.out.printf("%-25s | %-25s | %s%n", "Tim Kandang", "Tim Tandang", "Skor");
-        System.out.println("-----------------------------------------------------------");
-        for (int i = 0; i < hasil.length; i += 4) {
-            int indexKandang = hasil[i];
-            int indexTandang = hasil[i + 1];
-            int golKandang = hasil[i + 2];
-            int golTandang = hasil[i + 3];
-    
-            Tim timKandang = cariTim(indexKandang);
-            Tim timTandang = cariTim(indexTandang);
-
-            System.out.printf("%-25s | %-25s | %d - %d%n",
-                    timKandang.nama, timTandang.nama, golKandang, golTandang);
-        }
-    }
-
-    public void urutkanKlasemen() {
-        if (head == null || head.next == null) {
+    public void sorttims() {
+        if (head == null) {
             return;
         }
+        Node current = head;
+        Node index;
+        Tim temp;
 
-        boolean swapped;
-        do {
-            swapped = false;
-            Node current = head;
-            Node prev = null;
-            Node next = head.next;
-
-            while (next != null) {
-                if (current.tim.poin < next.tim.poin) {
-                    if (prev != null) {
-                        prev.next = next;
-                    } else {
-                        head = next;
-                    }
-                    current.next = next.next;
-                    next.next = current;
-
-                    prev = next;
-                    next = current.next;
-                    swapped = true;
-                } else {
-                    prev = current;
-                    current = next;
-                    next = next.next;
+        while (current != null) {
+            index = current.next;
+            while (index != null) {
+                if (current.tim.poin < index.tim.poin) {
+                    temp = current.tim;
+                    current.tim = index.tim;
+                    index.tim = temp;
                 }
+                index = index.next;
             }
-        } while (swapped);
+            current = current.next;
+        }
     }
 
-    public void tampilkanKlasemen() {
+       public void tampilkanKlasemen() {
         System.out.printf("%-5s | %-25s | %-5s | %-6s | %-5s | %-5s | %-3s%n", "Rank", "Tim", "Poin", "Menang", "Seri", "Kalah", "SG");
         System.out.println("--------------------------------------------------------------------------");
         Node current = head;
@@ -118,6 +62,58 @@ public class LinkedList {
             ranking++;
         }
     }
+
+
+    // public void tampilkanHasil(int[] hasil) {
+    //     System.out.printf("%-25s | %-25s | %s%n", "Tim Kandang", "Tim Tandang", "Skor");
+    //     System.out.println("-----------------------------------------------------------");
+    //     for (int i = 0; i < hasil.length; i += 4) {
+    //         int indexKandang = hasil[i];
+    //         int indexTandang = hasil[i + 1];
+    //         int golKandang = hasil[i + 2];
+    //         int golTandang = hasil[i + 3];
+    
+
+    //         System.out.printf("%-25s | %-25s | %d - %d%n",
+    //                 timKandang.nama, timTandang.nama, golKandang, golTandang);
+    //     }
+    // }
+
+    // public void urutkanKlasemen() {
+    //     if (head == null || head.next == null) {
+    //         return;
+    //     }
+
+    //     boolean swapped;
+    //     do {
+    //         swapped = false;
+    //         Node current = head;
+    //         Node prev = null;
+    //         Node next = head.next;
+
+    //         while (next != null) {
+    //             if (current.tim.poin < next.tim.poin) {
+    //                 if (prev != null) {
+    //                     prev.next = next;
+    //                 } else {
+    //                     head = next;
+    //                 }
+    //                 current.next = next.next;
+    //                 next.next = current;
+
+    //                 prev = next;
+    //                 next = current.next;
+    //                 swapped = true;
+    //             } else {
+    //                 prev = current;
+    //                 current = next;
+    //                 next = next.next;
+    //             }
+    //         }
+    //     } while (swapped);
+    // }
+
+ 
 
 
 }
