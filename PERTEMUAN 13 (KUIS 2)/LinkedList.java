@@ -17,17 +17,19 @@ public class LinkedList {
         }
     }
 
-
-    public Tim cariTim(String nama) {
+    public Tim cariTim(int index) {
         Node current = head;
+        int count = 0;
         while (current != null) {
-            if (current.tim.nama.equalsIgnoreCase(nama)) {
+            if (count == index) {
                 return current.tim;
             }
+            count++;
             current = current.next;
         }
-        return null;
+        return null; 
     }
+    
 
     public void sorttims() {
         if (head == null) {
@@ -64,54 +66,102 @@ public class LinkedList {
     }
 
 
-    // public void tampilkanHasil(int[] hasil) {
-    //     System.out.printf("%-25s | %-25s | %s%n", "Tim Kandang", "Tim Tandang", "Skor");
-    //     System.out.println("-----------------------------------------------------------");
-    //     for (int i = 0; i < hasil.length; i += 4) {
-    //         int indexKandang = hasil[i];
-    //         int indexTandang = hasil[i + 1];
-    //         int golKandang = hasil[i + 2];
-    //         int golTandang = hasil[i + 3];
+    public void tampilkanHasil(int[] hasil) {
+        System.out.printf("%-25s | %-25s | %s%n", "Tim Kandang", "Tim Tandang", "Skor");
+        System.out.println("-----------------------------------------------------------");
+        for (int i = 0; i < hasil.length; i += 4) {
+            int indexKandang = hasil[i];
+            int indexTandang = hasil[i + 1];
+            int golKandang = hasil[i + 2];
+            int golTandang = hasil[i + 3];
+
+            Tim timKandang = cariTim(indexKandang);
+            Tim timTandang = cariTim(indexTandang);
+
+            System.out.printf("%-25s | %-25s | %d - %d%n",
+                    timKandang.nama, timTandang.nama, golKandang, golTandang);
+        }
+    }
+
+    public void urutkanKlasemen() {
+        if (head == null || head.next == null) {
+            return;
+        }
+
+        boolean swapped;
+        do {
+            swapped = false;
+            Node current = head;
+            Node prev = null;
+            Node next = head.next;
+
+            while (next != null) {
+                if (current.tim.poin < next.tim.poin) {
+                    if (prev != null) {
+                        prev.next = next;
+                    } else {
+                        head = next;
+                    }
+                    current.next = next.next;
+                    next.next = current;
+
+                    prev = next;
+                    next = current.next;
+                    swapped = true;
+                } else {
+                    prev = current;
+                    current = next;
+                    next = next.next;
+                }
+            }
+        } while (swapped);
+    }
+
+    public void updateKlasemen(int[] hasil) {
+        for (int i = 0; i < hasil.length; i += 4) {
+            int indexKandang = hasil[i];
+            int indexTandang = hasil[i + 1];
+            int golKandang = hasil[i + 2];
+            int golTandang = hasil[i + 3];
     
-
-    //         System.out.printf("%-25s | %-25s | %d - %d%n",
-    //                 timKandang.nama, timTandang.nama, golKandang, golTandang);
-    //     }
-    // }
-
-    // public void urutkanKlasemen() {
-    //     if (head == null || head.next == null) {
-    //         return;
-    //     }
-
-    //     boolean swapped;
-    //     do {
-    //         swapped = false;
-    //         Node current = head;
-    //         Node prev = null;
-    //         Node next = head.next;
-
-    //         while (next != null) {
-    //             if (current.tim.poin < next.tim.poin) {
-    //                 if (prev != null) {
-    //                     prev.next = next;
-    //                 } else {
-    //                     head = next;
-    //                 }
-    //                 current.next = next.next;
-    //                 next.next = current;
-
-    //                 prev = next;
-    //                 next = current.next;
-    //                 swapped = true;
-    //             } else {
-    //                 prev = current;
-    //                 current = next;
-    //                 next = next.next;
-    //             }
-    //         }
-    //     } while (swapped);
-    // }
+            // Ambil tim berdasarkan indeks
+            Tim timKandang = cariTim(indexKandang);
+            Tim timTandang = cariTim(indexTandang);
+    
+            // Perbarui statistik tim berdasarkan hasil pertandingan
+            if (timKandang != null && timTandang != null) {
+                if (golKandang > golTandang) {
+                    // Tim kandang menang
+                    timKandang.menang++;
+                    timTandang.kalah++;
+                } else if (golKandang < golTandang) {
+                    // Tim tandang menang
+                    timKandang.kalah++;
+                    timTandang.menang++;
+                } else {
+                    // Pertandingan seri
+                    timKandang.seri++;
+                    timTandang.seri++;
+                }
+    
+                // Perbarui selisih gol
+                timKandang.selisihGol += (golKandang - golTandang);
+                timTandang.selisihGol += (golTandang - golKandang);
+    
+                // Perbarui poin
+                if (golKandang > golTandang) {
+                    timKandang.poin += 3; // Tim kandang menang, mendapatkan 3 poin
+                } else if (golKandang < golTandang) {
+                    timTandang.poin += 3; // Tim tandang menang, mendapatkan 3 poin
+                } else {
+                    timKandang.poin++; // Pertandingan seri, masing-masing tim mendapatkan 1 poin
+                    timTandang.poin++;
+                }
+            }
+        }
+        sorttims();
+    }
+    
 
  
 
