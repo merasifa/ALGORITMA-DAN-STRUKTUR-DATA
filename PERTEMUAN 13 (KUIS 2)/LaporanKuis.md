@@ -1,6 +1,6 @@
 # <p align ="center">  LAPORAN PRAKTIKUM ALGORITMA DAN STRUKTUR DATA </p> 
-# <p align ="center">  JOBSHEET 11 </p> 
-# <p align ="center">  LINKED LIST </p> 
+# <p align ="center">  KUIS 2</p> 
+# <p align ="center">  EPL - LINKED LIST</p> 
 <br><br><br><br>
 
 <p align="center">
