@@ -65,23 +65,36 @@ public class LinkedList {
         }
     }
 
-
     public void tampilkanHasil(int[] hasil) {
         System.out.printf("%-25s | %-25s | %s%n", "Tim Kandang", "Tim Tandang", "Skor");
         System.out.println("-----------------------------------------------------------");
+      
         for (int i = 0; i < hasil.length; i += 4) {
-            int indexKandang = hasil[i];
-            int indexTandang = hasil[i + 1];
-            int golKandang = hasil[i + 2];
-            int golTandang = hasil[i + 3];
-
-            Tim timKandang = cariTim(indexKandang);
-            Tim timTandang = cariTim(indexTandang);
-
+          int indexKandang = hasil[i];
+          int indexTandang = hasil[i + 1];
+          int golKandang = hasil[i + 2];
+          int golTandang = hasil[i + 3];
+      
+          // Ambil objek Tim dari LinkedList berdasarkan indeks
+          Tim timKandang = cariTim(indexKandang);
+          Tim timTandang = cariTim(indexTandang);
+      
+          // Periksa apakah tim ditemukan
+          if (timKandang != null && timTandang != null) {
+            // Akses nama tim langsung dari objek Tim
+            String namaKandang = timKandang.nama;
+            String namaTandang = timTandang.nama;
+      
+            // Format dan cetak hasil pertandingan
             System.out.printf("%-25s | %-25s | %d - %d%n",
-                    timKandang.nama, timTandang.nama, golKandang, golTandang);
+                    namaKandang, namaTandang, golKandang, golTandang);
+          } else {
+            // Tim tidak ditemukan, tampilkan pesan kesalahan
+            System.out.println("Tim dengan indeks " + indexKandang + " atau " + indexTandang + " tidak ditemukan.");
+          }
         }
-    }
+      }
+      
 
     public void urutkanKlasemen() {
         if (head == null || head.next == null) {
