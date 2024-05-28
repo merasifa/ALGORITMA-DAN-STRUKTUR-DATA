@@ -58,3 +58,7 @@ head.prev = null;
 3. Jelaskan perbedaan karakteristik fungsi Add pada Double Linked Lists dan Single Linked Lists! 
 4. Jelaskan perbedaan logika dari kedua kode program di bawah ini!
 ![alt text](image-4.png)
+
+## TUGAS PRAKTIKUM
+1. PROGRAM ANTRIAN VAKSINASI
+2. DATA FILM LAYAR LEBAR
