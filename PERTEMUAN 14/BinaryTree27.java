@@ -62,9 +62,17 @@ void traversePreOrder(Node27 node) {
 
 void traversePostOrder(Node27 node) {
     if (node != null) {
-        System.out.print(" " + node.left);
+        traversePostOrder(node.left);
         traversePostOrder(node.right);
         System.out.print(" " + node.data);
+    }
+}
+
+void traverseInOrder(Node27 node) {
+    if (node != null) {
+        traverseInOrder(node.left);
+        System.out.print(" " + node.data);
+        traverseInOrder(node.right);
     }
 }
 
@@ -110,7 +118,7 @@ public void delete(int data) {
         return;
     }
 
-    // Kasus 1: Node adalah daun (tidak memiliki anak)
+    //tidak memiliki anak
     if (current.left == null && current.right == null) {
         if (current == root) {
             root = null;
@@ -120,8 +128,8 @@ public void delete(int data) {
             parent.right = null;
         }
     }
-    // Kasus 2: Node memiliki satu anak (hanya anak kiri atau kanan)
-    else if (current.right == null) { // Hanya memiliki anak kiri
+    //satu anak (hanya anak kiri atau kanan)
+    else if (current.right == null) { //nak kiri
         if (current == root) {
             root = current.left;
         } else if (isLeftChild) {
@@ -129,7 +137,7 @@ public void delete(int data) {
         } else {
             parent.right = current.left;
         }
-    } else if (current.left == null) { // Hanya memiliki anak kanan
+    } else if (current.left == null) { // anak kanan
         if (current == root) {
             root = current.right;
         } else if (isLeftChild) {
@@ -138,7 +146,7 @@ public void delete(int data) {
             parent.right = current.right;
         }
     }
-    // Kasus 3: Node memiliki dua anak
+    //dua anak
     else {
         Node27 successor = getSuccessor(current);
         if (current == root) {

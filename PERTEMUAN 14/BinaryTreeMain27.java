@@ -14,7 +14,7 @@ public class BinaryTreeMain27 {
         System.out.println("Pre Order Traversal: ");
         bt.traversePreOrder(bt.root);
         System.out.println("in Order Traversal: ");
-        bt.traversePostOrder(null);;
+        bt.traverseInOrder(null);;
         
     }
 }
