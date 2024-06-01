@@ -13,8 +13,23 @@ public class BinaryTreeMain27 {
         
         System.out.println("Pre Order Traversal: ");
         bt.traversePreOrder(bt.root);
+        System.out.println();
+
         System.out.println("in Order Traversal: ");
-        bt.traverseInOrder(null);;
+        bt.traverseInOrder(bt.root);
+        System.out.println();
+
+        System.out.println("Post Order Traversal: ");
+        bt.traversePostOrder(bt.root);
+        System.out.println();
+        
+        System.out.println("Find Node :" +bt.find(5));
+        System.out.println("Delete node 8 ");
+        bt.delete(8);
+        System.out.println(" ");
+        System.out.println("Pre Order Traversal: ");
+        bt.traversePreOrder(bt.root);
+        System.out.println("");
         
     }
 }

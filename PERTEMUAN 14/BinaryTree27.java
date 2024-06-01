@@ -2,30 +2,30 @@ public class BinaryTree27 {
     Node27 root;
 
 boolean isEmpty(){
-    return root != null;
+    return root == null;
 }
 
-void add(int data){
-    if(!isEmpty()){
+void add(int data) {
+    if (isEmpty()) {
         root = new Node27(data);
-    }else{
+    } else {
         Node27 current = root;
-        while(true){
-            if (data>current.data){
-                if(current.left== null){
-                    current = current.left;
-                }else{
+        while (true) {
+            if (data < current.data) {
+                if (current.left == null) {
                     current.left = new Node27(data);
                     break;
+                } else {
+                    current = current.left;
                 }
-            }else if(data<current.data){
-                if(current.right!=null){
-                    current = current.right;
-                }else{
+            } else if (data > current.data) {
+                if (current.right == null) {
                     current.right = new Node27(data);
                     break;
+                } else {
+                    current = current.right;
                 }
-            }else{
+            } else {
                 break;
             }
         }
@@ -56,7 +56,6 @@ void traversePreOrder(Node27 node) {
         System.out.print(" " + node.data);
         traversePreOrder(node.left);
         traversePreOrder(node.right);
-        System.out.print(" " + node.data);
     }
 }
 
