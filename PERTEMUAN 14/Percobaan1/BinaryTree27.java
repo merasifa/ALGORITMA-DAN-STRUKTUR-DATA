@@ -207,7 +207,7 @@ void tampilDataLeaf(Node27 node) { // TUGAS 3
 }
 
 int tampilJumlahLeaf(Node27 node) { // TUGAS 4
-    if (node != null) {
+    if (node == null) {
         return 0;
     }else if (node.left == null && node.right == null) {
         System.out.println(" " + node.data);

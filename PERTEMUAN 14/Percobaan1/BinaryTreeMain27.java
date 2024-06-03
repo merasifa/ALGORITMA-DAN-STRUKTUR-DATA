@@ -31,6 +31,17 @@ public class BinaryTreeMain27 {
         System.out.println("Pre Order Traversal: ");
         bt.traversePreOrder(bt.root);
         System.out.println("");
-        
+
+        // nilai max dan min
+        System.out.println("Minimum : " +bt.cariMin());
+        System.out.println("Maximum : " +bt.cariMax());
+
+        //nilai leaf 
+        System.out.println("Data Leaf: ");
+        bt.tampilDataLeaf(bt.root);
+        System.out.println();
+
+        //jumlah leaf
+        System.out.println("\nJumlah leaf: " +bt.tampilJumlahLeaf(bt.root));
     }
 }
