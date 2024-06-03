@@ -28,6 +28,11 @@
 left child dan rigth child masin-masing?
 5. Apa kegunaan statement int idxLast = 6 pada praktikum 2 percobaan nomor 4?
 
+# Praktikum
+## 13.2.Percobaan 2
+## 13.2.2 Verifikasi Hasil Percobaan
+## 13.2.3 Pertanyaan Percobaan
+
 ## 13.4 Tugas Praktikum
 1. Buat method di dalam class BinaryTree yang akan menambahkan node dengan cara 
 rekursif.
