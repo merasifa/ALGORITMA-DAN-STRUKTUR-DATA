@@ -1,3 +1,5 @@
+import Percobaan1.Node27;
+
 public class SingleLinkedList27 {
     Node27 head, tail;
 

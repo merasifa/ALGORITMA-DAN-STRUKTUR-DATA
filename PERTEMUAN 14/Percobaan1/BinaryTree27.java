@@ -1,3 +1,4 @@
+package Percobaan1;
 public class BinaryTree27 {
     Node27 root;
 
@@ -36,7 +37,6 @@ boolean find(int data) {
     Node27 current = root;
     boolean result = false;
 
-    // Loop selama current tidak null
     while (current != null) {
         // Jika data ditemukan pada node saat ini
         if (current.data == data) {
@@ -47,7 +47,6 @@ boolean find(int data) {
             current = current.right; // Pindah ke subtree kanan
         }
     }
-    // Jika elemen tidak ditemukan setelah loop, kembalikan false
     return result;
 }
 
@@ -98,8 +97,6 @@ public void delete(int data) {
     Node27 parent = null;
     Node27 current = root;
     boolean isLeftChild = false;
-
-    // Cari node yang akan dihapus dan catat parent-nya
     while (current != null && current.data != data) {
         parent = current;
         if (data < current.data) {
@@ -158,6 +155,68 @@ public void delete(int data) {
         successor.left = current.left;
     }
 }
+
+void tambahRekursif(Node27 current, int data){ // TUGAS 1
+    if (current == null) {
+        current = new Node27(data); 
+    } else {
+        // Jika data kurang dari data node current, periksa subtree kiri
+        if (data < current.data) {
+            if (current.left != null) {
+                tambahRekursif(current.left, data);
+            } else {
+                current.left = new Node27(data);
+            }
+        }
+        // Jika data lebih dari data node current, subtree kanan
+        else if (data > current.data) {
+            if (current.right != null) {
+                tambahRekursif(current.right, data);
+            } else {
+                current.right = new Node27(data);
+            }
+        }
+    }
+
+}
+int cariMin(){ //TUGAS 2
+    Node27 current = root;
+    while (current.left != null) {
+        current = current.left;
+    }
+    return current.data;
+}
+
+int cariMax(){ // TUGAS 2
+    Node27 current = root;
+    while (current.right != null) {
+        current = current.right;
+    }
+    return current.data;
+}  
+
+void tampilDataLeaf(Node27 node) { // TUGAS 3
+    if (node != null) {
+        if (node.left == null && node.right == null) {
+            System.out.print(node.data +" ");
+        } else {
+            tampilDataLeaf(node.left);
+            tampilDataLeaf(node.right);
+        }
+    }
+}
+
+int tampilJumlahLeaf(Node27 node) { // TUGAS 4
+    if (node != null) {
+        return 0;
+    }else if (node.left == null && node.right == null) {
+        System.out.println(" " + node.data);
+        return 1;
+    } else {
+        return tampilJumlahLeaf(node.left) + tampilJumlahLeaf(node.right);
+    }
+}
+
 
 
 }

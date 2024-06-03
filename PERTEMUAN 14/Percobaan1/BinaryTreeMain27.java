@@ -1,3 +1,4 @@
+package Percobaan1;
 public class BinaryTreeMain27 {
     public static void main(String[] args) {
         BinaryTree27 bt = new BinaryTree27();

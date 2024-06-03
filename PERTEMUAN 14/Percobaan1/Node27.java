@@ -1,3 +1,4 @@
+package Percobaan1;
 public class Node27 {
     int data;
     Node27 left;
