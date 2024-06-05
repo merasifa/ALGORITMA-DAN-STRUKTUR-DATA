@@ -301,12 +301,18 @@
 ![alt text](image-1.png)
 
 ## 2.1.3 Pertanyaan
-1. Perbaiki kode program Anda apabila terdapat error atau hasil kompilasi kode tidak sesuai!
+1. Perbaiki kode program Anda apabila terdapat error atau hasil kompilasi kode tidak sesuai!<br>
+sudah
 2. Pada class Graph, terdapat atribut list[] bertipe DoubleLinkedList. Sebutkan tujuan pembuatan 
-variabel tersebut!
-3. Jelaskan alur kerja dari method removeEdge!
+variabel tersebut!<br>
+Tujuan atribut list[] yaitu untuk menyimpan semua tepi yang terhubung dalam simpul graf.
+3. Jelaskan alur kerja dari method removeEdge!<br>
+- Menggunakan parameter masukan berupa asal dan tujuan
+- Memulai perulangan dari i = 0 sapai i < vertex.Dan setiap perulangan memeriksa apakah i == tujuan.
+- Jika i== tujuan, maka method akan menghapus simpul tujuan dari linkedlist
 4. Apakah alasan pemanggilan method addFirst() untuk menambahkan data, bukan method add 
 jenis lain saat digunakan pada method addEdge pada class Graph?
+
 5. Modifikasi kode program sehingga dapat dilakukan pengecekan apakah terdapat jalur antara 
 suatu node dengan node lainnya, seperti contoh berikut (Anda dapat memanfaatkan Scanner).
 
