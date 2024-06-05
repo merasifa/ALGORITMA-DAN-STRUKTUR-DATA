@@ -311,11 +311,109 @@ Tujuan atribut list[] yaitu untuk menyimpan semua tepi yang terhubung dalam simp
 - Memulai perulangan dari i = 0 sapai i < vertex.Dan setiap perulangan memeriksa apakah i == tujuan.
 - Jika i== tujuan, maka method akan menghapus simpul tujuan dari linkedlist
 4. Apakah alasan pemanggilan method addFirst() untuk menambahkan data, bukan method add 
-jenis lain saat digunakan pada method addEdge pada class Graph?
-
+jenis lain saat digunakan pada method addEdge pada class Graph?<br>
+Efisiensi waktu dan pengimplementasian yang sederhana
 5. Modifikasi kode program sehingga dapat dilakukan pengecekan apakah terdapat jalur antara 
-suatu node dengan node lainnya, seperti contoh berikut (Anda dapat memanfaatkan Scanner).
+suatu node dengan node lainnya, seperti contoh berikut (Anda dapat memanfaatkan Scanner).<br>
+### Graph27.java
 
+         public class Graph27 {
+            int vertex;
+            DoubleLinkedList27 list[];
+
+            public Graph27(int v) {
+               vertex = v;
+               list = new DoubleLinkedList27[v];
+               for (int i = 0; i < v; i++) {
+                     list[i] = new DoubleLinkedList27();
+               }
+            }
+
+            public void addEdge(int asal, int tujuan, int jarak) {
+               list[asal].addFirst(tujuan, jarak);
+            }
+
+            public void degree (int asal) throws Exception {
+               int k, totalIn=0, totalOut=0;
+               for (int i=0; i < vertex; i++) {
+                     //inDegree
+                     for(int j = 0; j < list[i].size; j++) {
+                        if (list[i].get(j) == asal) {
+                           ++totalIn;
+                        }
+                     }
+                     //outDegree
+                     for(k=0; k < list[asal].size(); k++){
+                        list[asal].get(k);
+                     }
+                     totalOut = k;
+               }
+               System.out.println("InDegree dari Gedung " + (char) ('A' + asal) + ": " + totalIn );
+               System.out.println("OutDegree dari Gedung " + (char) ('A' + asal) + ": " + totalOut );
+               System.out.println("Degree dari Gedung " + (char) ('A' + asal) + ": " + (totalIn + totalOut));
+            }
+
+            public void removeEdge(int asal, int tujuan) throws Exception {
+               for (int i= 0; i< vertex; i++) {
+                     if (i == tujuan) {
+                        list[asal].remove(tujuan);
+                     }
+               }
+            }
+
+            public void removeAllEdges(){
+               for (int i = 0; i < vertex; i++) {
+                     list[i].clear();
+               }
+               System.out.println("Graf berhasil dikosongkan");
+            }
+
+            public void printGraph() throws Exception {
+               for (int i=0; i < vertex; i++) {
+                     if(list[i].size() > 0) {
+                        System.out.println("Gedung " + (char) ('A' + i) + " terhubung dengan ");
+                        for (int j= 0; j < list[i].size(); j++) {
+                           System.out.print((char) ('A' + list[i].get(j)) + " (" + list[i].getJarak(j) + "m), ");
+                        }
+                        System.out.println("");
+                     }
+               }
+               System.out.println("");
+            }
+
+            public boolean cekTetangga(int asal, int tujuan) throws Exception{
+               for (int i = 0; i < list[asal].size(); i++) {
+                     if (list[asal].get(i) == tujuan) {
+                        return true;
+                     }
+               }
+               return false;
+            }
+         }
+
+
+### GraphMain27.java
+
+         // Tugas no 5
+               System.out.print("Masukkan gedung asal: ");
+               int asal = sc27.nextInt();
+
+               System.out.print("Masukkan gedung tujuan: ");
+               int tujuan = sc27.nextInt();
+
+               boolean tetangga = gedung.cekTetangga(asal, tujuan);
+               char gedungAsal = (char) ('A' + asal);
+               char gedungTujuan = (char) ('A' + tujuan);
+               
+               if (tetangga) {
+                     System.out.println("Gedung " + gedungAsal + " dan " + gedungTujuan + " bertetangga");
+               } else {
+                     System.out.println("Gedung " + gedungAsal + " dan " + gedungTujuan + " tidak bertetangga");
+               }
+    
+
+### Verifikasi Hasil Percobaan
+![alt text](image-3.png)
 
 ## 2.1.Percobaan 2 Implementasi Graph menggunakan Matriks
 
@@ -378,12 +476,59 @@ suatu node dengan node lainnya, seperti contoh berikut (Anda dapat memanfaatkan 
 ![alt text](image-2.png)
 
 ## 2.2.3 Pertanyaan 
-1. Perbaiki kode program Anda apabila terdapat error atau hasil kompilasi kode tidak sesuai!
-2. Apa jenis graph yang digunakan pada Percobaan 2?
+1. Perbaiki kode program Anda apabila terdapat error atau hasil kompilasi kode tidak sesuai!<br>
+sudah
+2. Apa jenis graph yang digunakan pada Percobaan 2?<br>
+graph yang digunakan pada percobaan 2 adalah jenis graph berarah
+
 3. Apa maksud dari dua baris kode berikut?
+
+         gdg.makeEdge(1, 2, 70);
+            gdg.makeEdge(2, 1, 80);
+      
+<br>
+Baris tersebut memanggil method MakeEdge pada sebuah objek yang bernama gdg.
+Pada baris pertama menambahkan sebuah tepi simpul 1 ke simpul 2 dengan jarak 70.
+Pada baris kedua menabahkan sebuah tepi simpul 2 ke simpul 1 dengan jarak 80.
+
 4. Modifikasi kode program sehingga terdapat method untuk menghitung degree, termasuk 
 inDegree dan outDegree!
 
+### graphMatriks27.java
+
+            public int inDegree(int vertex) {
+               int inDegree = 0;
+               for (int i = 0; i < this.vertex; i++) {
+                     if (matriks[i][vertex] != 0) { // Cek apakah ada tepi masuk ke vertex
+                        inDegree++;
+                     }
+               }
+                     return inDegree;
+               }
+
+            public int outDegree(int vertex) {
+               int outDegree = 0;
+               for (int j = 0; j < this.vertex; j++) {
+                     if (matriks[vertex][j] != 0) { // Cek apakah ada tepi keluar dari vertex
+                        outDegree++;
+                     }
+               }
+                     return outDegree;
+               }
+
+            public int degree(int vertex){
+               return outDegree(vertex) + inDegree(vertex);
+
+            }
+
+### graphMain27.java
+
+         for (int i = 0; i < 4; i++) {
+                     System.out.println("Degree dari Gedung " + (char) ('A' + i) + ": " + gdg.degree(i));
+               }
+
+### verifikasi hasil percobaan
+![alt text](image-4.png)
 ## Latihan Praktikum 
 1. Modifikasi kode program pada class GraphMain sehingga terdapat menu program yang bersifat 
 dinamis, setidaknya terdiri dari:
@@ -392,7 +537,117 @@ b) Remove Edge
 c) Degree
 d) Print Graph
 e) Cek Edge
+
+### class Main.java
+
+         //Modif
+            boolean exit = false;
+
+               while (!exit) {
+                     System.out.println("Menu:");
+                     System.out.println("1. Add Edge");
+                     System.out.println("2. Remove Edge");
+                     System.out.println("3. Degree");
+                     System.out.println("4. Print Graph");
+                     System.out.println("5. Cek Edge");
+                     System.out.println("6. Keluar");
+                     System.out.print("Pilih menu: ");
+                     int menu = sc27.nextInt();
+
+                     switch (menu) {
+                        case 1:
+                           System.out.print("Masukkan titik awal: ");
+                           int awal = sc27.nextInt();
+                           System.out.print("Masukkan titik akhir: ");
+                           int akhir = sc27.nextInt();
+                           System.out.print("Masukkan bobot: ");
+                           int bobot = sc27.nextInt();
+                           gedung.addEdge(awal, akhir, bobot);
+                           break;
+                        case 2:
+                           System.out.print("Masukkan titik awal: ");
+                           int removeAwal = sc27.nextInt();
+                           System.out.print("Masukkan titik akhir: ");
+                           int removeAkhir = sc27.nextInt();
+                           gedung.removeEdge(removeAwal, removeAkhir);
+                           break;
+                        case 3:
+                           System.out.print("Masukkan titik: ");
+                           int titik = sc27.nextInt();
+                           gedung.degree(titik);
+                           break;
+                        case 4:
+                           gedung.printGraph();
+                           break;
+                        case 5:
+                           System.out.print("Masukkan titik awal: ");
+                           int asal = sc27.nextInt();
+                           System.out.print("Masukkan titik tujuan: ");
+                           int tujuan = sc27.nextInt();
+                           boolean tetangga = gedung.cekTetangga(asal, tujuan);
+                           char gedungAsal = (char) ('A' + asal);
+                           char gedungTujuan = (char) ('A' + tujuan);
+                           if (tetangga) {
+                                 System.out.println("Gedung " + gedungAsal + " dan " + gedungTujuan + " bertetangga");
+                           } else {
+                                 System.out.println("Gedung " + gedungAsal + " dan " + gedungTujuan + " tidak bertetangga");
+                           }
+                           break;
+                        case 6:
+                           exit = true;
+                           break;
+                        default:
+                           System.out.println("Pilihan tidak valid.");
+                           break;
+                     }
+               }
 Pengguna dapat memilih menu program melalui input Scanner
+
+### verifikasi hasil percobaan
+![alt text](image-5.png)
+
 2. Tambahkan method updateJarak pada Percobaan 1 yang digunakan untuk mengubah jarak 
-antara dua node asal dan tujuan!
-3. Tambahkan method hitungEdge untuk menghitung banyaknya edge yang terdapat di dalam graf!
+antara dua node asal dan tujuan! <br>
+
+
+         public void updateJarak(int asal, int tujuan, int jarakBaru) {
+            try {
+                  int index = -1;
+                  // Mencari index tujuan di dalam list[asal]
+                  for (int i = 0; i < list[asal].size(); i++) {
+                     if (list[asal].get(i) == tujuan) {
+                        index = i;
+                        break;
+                     }
+                  }
+                  if (index != -1) {
+                     // Update jarak
+                     list[asal].setJarak(index, jarakBaru);
+                     System.out.println("Jarak antara Gedung " + (char) ('A' + asal) + " dan Gedung " + (char) ('A' + tujuan)
+                              + " berhasil diupdate menjadi " + jarakBaru + " meter.");
+                  } else {
+                     System.out.println(
+                              "Tidak dapat memperbarui jarak: Gedung " + (char) ('A' + asal) + " tidak terhubung dengan Gedung " + (char) ('A' + tujuan));
+                  }
+            } catch (Exception e) {
+                  System.out.println("Terjadi kesalahan saat memperbarui jarak: " + e.getMessage());
+            }
+         }
+
+### Verifikasi Hasil Percobaan
+         ![alt text](image-6.png)
+
+3. Tambahkan method hitungEdge untuk menghitung banyaknya edge yang terdapat di dalam graf!<br>
+
+         public int hitungEdge() {
+               int totalEdge = 0;
+               for (int i = 0; i < vertex; i++) {
+                     totalEdge += list[i].size();
+               }
+               return totalEdge;
+            }
+
+### Verifikasi Hasil Percobaan
+![alt text](image-7.png)
+
+

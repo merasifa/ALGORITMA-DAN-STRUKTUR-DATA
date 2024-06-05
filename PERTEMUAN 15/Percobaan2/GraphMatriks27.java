@@ -29,5 +29,30 @@ public class GraphMatriks27 {
             }
         }
 
+    public int inDegree(int vertex) {
+        int inDegree = 0;
+        for (int i = 0; i < this.vertex; i++) {
+            if (matriks[i][vertex] != 0) { // Cek apakah ada tepi masuk ke vertex
+                inDegree++;
+            }
+        }
+            return inDegree;
+        }
+
+    public int outDegree(int vertex) {
+        int outDegree = 0;
+        for (int j = 0; j < this.vertex; j++) {
+            if (matriks[vertex][j] != 0) { // Cek apakah ada tepi keluar dari vertex
+                outDegree++;
+            }
+        }
+            return outDegree;
+        }
+
+    public int degree(int vertex){
+        return outDegree(vertex) + inDegree(vertex);
+
+    }
+
 }
 

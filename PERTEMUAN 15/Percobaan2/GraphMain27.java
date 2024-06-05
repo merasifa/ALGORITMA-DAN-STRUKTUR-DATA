@@ -13,5 +13,9 @@ public class GraphMain27 {
         System.out.println("Hasil setelah penghapusan edge");
         gdg.removeEdge(2, 1);
         gdg.printGraph();
+
+        for (int i = 0; i < 4; i++) {
+            System.out.println("Degree dari Gedung " + (char) ('A' + i) + ": " + gdg.degree(i));
+        }
     }
 }

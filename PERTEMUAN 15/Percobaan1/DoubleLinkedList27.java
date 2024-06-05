@@ -1,3 +1,5 @@
+import org.w3c.dom.Node;
+
 public class DoubleLinkedList27 {
     Node27 head;
     int size;
@@ -167,5 +169,29 @@ public class DoubleLinkedList27 {
             tmp = tmp.next;
         }
         return tmp.jarak;
+    }
+
+    public void setJarak(int index, int jarakBaru) throws Exception {
+        if (isEmpty() || index >= size) {
+            throw new Exception("Nilai indeks di luar batas");
+        }
+        Node27 tmp = head;
+        for (int i = 0; i < index; i++) {
+            tmp = tmp.next;
+        }
+        tmp.jarak = jarakBaru;
+    }
+
+    public int indexOf(int tujuan) {
+        Node27 current = head;
+        int index = 0;
+        while (current != null) {
+            if (current.data == tujuan) {
+                return index;
+            }
+            current = current.next;
+            index++;
+        }
+        return -1;
     }
 }

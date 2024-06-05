@@ -70,5 +70,37 @@ public class Graph27 {
         }
         return false;
     }
+
+    public void updateJarak(int asal, int tujuan, int jarakBaru) {
+        try {
+            int index = -1;
+            // Mencari index tujuan di dalam list[asal]
+            for (int i = 0; i < list[asal].size(); i++) {
+                if (list[asal].get(i) == tujuan) {
+                    index = i;
+                    break;
+                }
+            }
+            if (index != -1) {
+                // Update jarak
+                list[asal].setJarak(index, jarakBaru);
+                System.out.println("Jarak antara Gedung " + (char) ('A' + asal) + " dan Gedung " + (char) ('A' + tujuan)
+                        + " berhasil diupdate menjadi " + jarakBaru + " meter.");
+            } else {
+                System.out.println(
+                        "Tidak dapat memperbarui jarak: Gedung " + (char) ('A' + asal) + " tidak terhubung dengan Gedung " + (char) ('A' + tujuan));
+            }
+        } catch (Exception e) {
+            System.out.println("Terjadi kesalahan saat memperbarui jarak: " + e.getMessage());
+        }
+    }
+    
+    public int hitungEdge() {
+        int totalEdge = 0;
+        for (int i = 0; i < vertex; i++) {
+            totalEdge += list[i].size();
+        }
+        return totalEdge;
+    }
 }
 
