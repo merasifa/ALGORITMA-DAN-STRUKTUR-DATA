@@ -1,5 +1,5 @@
 public class DoubleLinkedList27 {
-    Node227 head;
+    Node27 head;
     int size;
 
     public DoubleLinkedList27() {
@@ -11,57 +11,54 @@ public class DoubleLinkedList27 {
         return head == null;
     }
 
-    public void addFirst(int item) {
+    public void addFirst(int item, int jarak) {
         if (isEmpty()) {
-            head = new Node227(null, item, null);
+            head = new Node27(null, item, jarak, null);
         } else {
-            Node227 newNode = new Node227(null, item, head);
+            Node27 newNode = new Node27(null, item, jarak, head);
             head.prev = newNode;
             head = newNode;
         }
         size++;
     }
 
-    public void addLast(int item) {
+    public void addLast(int item, int jarak) {
         if (isEmpty()) {
-            addFirst(item);
+            addFirst(item, jarak);
         } else {
-            Node227 current = head;
+            Node27 current = head;
             while (current.next != null) {
                 current = current.next;
             }
-            Node227 newNode = new Node227(current, item, null);
+            Node27 newNode = new Node27(current, item, jarak, null);
             current.next = newNode;
             size++;
         }
     }
 
-    public void add(int item, int index) throws Exception {
+    public void add(int item, int jarak, int index) throws Exception {
         if (isEmpty()) {
-            addFirst(item);
+            addFirst(item, jarak);
         } else if (index < 0 || index > size) {
             throw new Exception("Nilai indeks di luar batas");
+        } else if (index == 0) {
+            addFirst(item, jarak);
         } else {
-            Node227 current = head;
+            Node27 current = head;
             int i = 0;
-            while (i < index) {
+            while (i < index - 1 && current.next != null) {
                 current = current.next;
                 i++;
             }
-            if (current.prev == null) {
-                Node227 newNode = new Node227(null, item, current);
-                current.prev = newNode;
-                head = newNode;
-            } else {
-                Node227 newNode = new Node227(current.prev, item, current);
-                newNode.prev = current.prev;
-                newNode.next = current;
-                current.prev.next = newNode;
-                current.prev = newNode;
+            Node27 newNode = new Node27(current, item, jarak, current.next);
+            if (current.next != null) {
+                current.next.prev = newNode;
             }
+            current.next = newNode;
+            size++;
         }
-        size++;
     }
+    
 
     public int size() {
         return size;
@@ -74,7 +71,7 @@ public class DoubleLinkedList27 {
 
     public void print() {
         if (!isEmpty()) {
-            Node227 tmp = head;
+            Node27 tmp = head;
             while (tmp != null) {
                 System.out.print(tmp.data + "\t");
                 tmp = tmp.next;
@@ -105,7 +102,7 @@ public class DoubleLinkedList27 {
             size--;
             return;
         }
-        Node227 current = head;
+        Node27 current = head;
         while (current.next.next != null) {
             current = current.next;
         }
@@ -113,31 +110,25 @@ public class DoubleLinkedList27 {
         size--;
     }
 
-    public void remove (int index) throws Exception {
-        if (isEmpty() || index >= size) {
-            throw new Exception("Nilai indeks di luar batas");
-        } else if (index ==0) {
-            removeFirst();
-        } else {
-            Node227 current = head;
-            int i = 0;
-            while (i < index) {
+    public void remove (int index){
+            Node27 current = head;
+            while (current != null) {
+                if(current.data == index){
+                    if(current.prev != null) {
+                        current.prev.next = current.next;
+                    } else {
+                        head = current.next;
+                    }
+                    if (current.next != null) {
+                        current.next.prev = current.prev;
+                    }
+                    break;
+                }
                 current = current.next;
-                i++;
-            }
-            if (current.next == null) {
-                current.prev.next = null;
-            } else if (current.prev == null) {
-                current = current.next;
-                current.prev = null;
-                head = current;
-            } else {
-                current.prev.next = current.next;
-                current.next.prev = current.prev;
             }
             size--;
+            
         }
-    }
 
     public int getFirst() throws Exception {
         if (isEmpty()) {
@@ -150,7 +141,7 @@ public class DoubleLinkedList27 {
         if (isEmpty()) {
             throw new Exception("Linked List Kosong");
         }
-        Node227 tmp = head;
+        Node27 tmp = head;
         while (tmp.next != null){
             tmp = tmp.next;
         }
@@ -160,10 +151,21 @@ public class DoubleLinkedList27 {
     public int get(int index) throws Exception {
         if (isEmpty() || index >= size)
         throw new Exception("Nilai indeks di luar batas.");
-        Node227 tmp = head;
+        Node27 tmp = head;
     for(int i= 0; i < index; i++) {
         tmp = tmp.next;
     }
     return tmp.data;
+    }
+
+    public int getJarak(int index) throws Exception {
+        if(isEmpty() || index >= size) {
+            throw new Exception("Nilai indeks diluar batas");
+        }
+        Node27 tmp = head;
+        for (int i = 0; i< index; i++) {
+            tmp = tmp.next;
+        }
+        return tmp.jarak;
     }
 }

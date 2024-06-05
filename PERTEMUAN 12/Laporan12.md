@@ -19,7 +19,135 @@
 
 # Praktikum
 ## 12.2.Percobaan 1
+
+### class Node227.java
+
+         public class Node227 {
+            int data;
+            Node227 prev, next;
+
+            Node227(Node227 prev, int data, Node227 next) {
+               this.prev = prev;
+               this.data = data;
+               this.next = next;
+            }
+         }
+### class doubleLinkedList27.java
+
+         public class DoubleLinkedList27 {
+            Node227 head;
+            int size;
+
+            public DoubleLinkedList27() {
+               head = null;
+               size = 0;
+            }
+
+            public boolean isEmpty() {
+               return head == null;
+            }
+
+            public void addFirst(int item) {
+               if (isEmpty()) {
+                     head = new Node227(null, item, null);
+               } else {
+                     Node227 newNode = new Node227(null, item, head);
+                     head.prev = newNode;
+                     head = newNode;
+               }
+               size++;
+            }
+
+            public void addLast(int item) {
+               if (isEmpty()) {
+                     addFirst(item);
+               } else {
+                     Node227 current = head;
+                     while (current.next != null) {
+                        current = current.next;
+                     }
+                     Node227 newNode = new Node227(current, item, null);
+                     current.next = newNode;
+                     size++;
+               }
+            }
+
+            public void add(int item, int index) throws Exception {
+               if (isEmpty()) {
+                     addFirst(item);
+               } else if (index < 0 || index > size) {
+                     throw new Exception("Nilai indeks di luar batas");
+               } else {
+                     Node227 current = head;
+                     int i = 0;
+                     while (i < index) {
+                        current = current.next;
+                        i++;
+                     }
+                     if (current.prev == null) {
+                        Node227 newNode = new Node227(null, item, current);
+                        current.prev = newNode;
+                        head = newNode;
+                     } else {
+                        Node227 newNode = new Node227(current.prev, item, current);
+                        newNode.prev = current.prev;
+                        newNode.next = current;
+                        current.prev.next = newNode;
+                        current.prev = newNode;
+                     }
+               }
+               size++;
+            }
+
+            public int size() {
+               return size;
+            }
+
+            public void clear() {
+               head = null;
+               size = 0;
+            }
+
+            public void print() {
+               if (!isEmpty()) {
+                     Node227 tmp = head;
+                     while (tmp != null) {
+                        System.out.print(tmp.data + "\t");
+                        tmp = tmp.next;
+                     }
+                     System.out.println("\nberhasil diisi");
+               } else {
+                     System.out.println("Linked List Kosong");
+               }
+            }
+
+### class doubleLinkedListMain.java
+
+         public class DoubleLinkedListMain27 {
+            public static void main(String[] args) throws Exception {
+               
+               DoubleLinkedList27 dll = new DoubleLinkedList27();
+               dll.print();
+               System.out.println("Size : " + dll.size());
+               System.out.println("========================================");
+               dll.addFirst(3);
+               dll.addLast(4);
+               dll.addFirst(7);
+               dll.print();
+               System.out.println("Size : " + dll.size());
+               System.out.println("========================================");
+               dll.add(40, 1);
+               dll.print();
+               System.out.println("Size : " + dll.size());
+               System.out.println("========================================");
+               dll.clear();
+               dll.print();
+               System.out.println("Size : " + dll.size());
+
+
 ## 12.2.2 Verifikasi Hasil Percobaan
+![alt text](image-5.png)
+
 ## 12.2.3 Pertanyaan Percobaan
 1. Jelaskan perbedaan antara single linked list dengan double linked lists!
 2. Perhatikan class Node, di dalamnya terdapat atribut next dan prev. Untuk apakah atribut 
@@ -39,7 +167,62 @@ jelaskan maksud dari bagian yang ditandai dengan kotak kuning.
 ![alt text](image-1.png)
 
 ## 12.2.Percobaan 2
+### class DoubleLinkedList227.java
+         public void removeFirst() throws Exception {
+               if (isEmpty()) {
+                     throw new Exception("Linked List masih kosong, tidak dapat dihapus!");
+               } else if (size == 1) {
+                     removeLast();
+               } else {
+                     head = head.next;
+                     head.prev = null;
+                     size--;
+               }
+            }
+
+            public void removeLast() throws Exception{
+               if (isEmpty()) {
+                     throw new Exception("Linked List masih kosong, tidak dapat dihapus!");
+               } else if (head.next == null) {
+                     head = null;
+                     size--;
+                     return;
+               }
+               Node227 current = head;
+               while (current.next.next != null) {
+                     current = current.next;
+               }
+               current.next = null;
+               size--;
+            }
+
+            public void remove (int index) throws Exception {
+               if (isEmpty() || index >= size) {
+                     throw new Exception("Nilai indeks di luar batas");
+               } else if (index ==0) {
+                     removeFirst();
+               } else {
+                     Node227 current = head;
+                     int i = 0;
+                     while (i < index) {
+                        current = current.next;
+                        i++;
+                     }
+                     if (current.next == null) {
+                        current.prev.next = null;
+                     } else if (current.prev == null) {
+                        current = current.next;
+                        current.prev = null;
+                        head = current;
+                     } else {
+                        current.prev.next = current.next;
+                        current.next.prev = current.prev;
+                     }
+                     size--;
+               }
+            }
 ## 12.3.2 Verifikasi Hasil Percobaan
+![alt text](image-6.png)
 ## 12.3.3 Pertanyaan Percobaan
 1. Apakah maksud statement berikut pada method removeFirst()?
 head = head.next;
@@ -51,7 +234,9 @@ head.prev = null;
 ![alt text](image-3.png)
 
 ## 12.2.Percobaan 3
+
 ## 12.3.2 Verifikasi Hasil Percobaan
+
 ## 12.3.3 Pertanyaan Percobaan
 1. Jelaskan method size() pada class DoubleLinkedLists!
 2. Jelaskan cara mengatur indeks pada double linked lists supaya dapat dimulai dari indeks ke1!
