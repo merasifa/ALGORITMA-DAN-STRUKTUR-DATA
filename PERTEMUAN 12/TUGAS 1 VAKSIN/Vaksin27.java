@@ -2,14 +2,11 @@ public class Vaksin27 {
     NodeVaksin27 head;
     int size;
 
-
-
     public Vaksin27() {
         head = null;
         size = 0;
     }
 
-    
     public boolean isEmpty() {
         return head == null;
     }
@@ -27,6 +24,7 @@ public class Vaksin27 {
             newNode.prev = current;
         }
         size++;
+        System.out.println("Peserta " + data + " telah ditambahkan ke antrian. Sisa antrian: " + size);
     }
 
     public void remove(String data) {
@@ -48,7 +46,7 @@ public class Vaksin27 {
                         current.next.prev = current.prev;
                     }
                 }
-                System.out.println("Peserta " + data + " telah dihapus dari antrian vaksinasi.");
+                System.out.println("Peserta " + data + " telah divaksin.");
                 size--;
                 return;
             }
@@ -63,13 +61,13 @@ public class Vaksin27 {
             return;
         }
         NodeVaksin27 current = head;
+        int nomorAntrian = 1;
+        System.out.println("Nomor Antrian | Nama");
+        System.out.println("--------------------");
         while (current != null) {
-            System.out.print(current.data + " -> ");
+            System.out.printf("%13d | %s\n", nomorAntrian, current.data);
             current = current.next;
+            nomorAntrian++;
         }
-        System.out.println("null");
     }
 }
-
-
-

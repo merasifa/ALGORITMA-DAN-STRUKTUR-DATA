@@ -25,7 +25,7 @@ public class VaksinMain27 {
                     System.out.println("Peserta " + name + " telah ditambahkan ke dalam antrian vaksinasi.");
                     break;
                 case 2:
-                    scanner27.nextLine(); // Clear newline character
+                    scanner27.nextLine(); 
                     System.out.print("Masukkan nama peserta yang ingin dihapus: ");
                     String nameToRemove = scanner27.nextLine();
                     linkedList.remove(nameToRemove);

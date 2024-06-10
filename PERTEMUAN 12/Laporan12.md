@@ -326,5 +326,156 @@ memeriksa apakah suatu struktur data (seperti linked list) kosong, tetapi mereka
 
 ## TUGAS PRAKTIKUM
 1. PROGRAM ANTRIAN VAKSINASI
+### class NodeVaksin27.java
+
+         public class NodeVaksin27 {
+            NodeVaksin27 prev;
+            NodeVaksin27 next;
+            String data;
+
+            public NodeVaksin27(String data) {
+               this.prev = null;
+               this.next = null;
+               this.data = data;
+            }
+         }
+
+### class Vaksin27.java
+
+         public class Vaksin27 {
+            NodeVaksin27 head;
+            int size;
+
+            public Vaksin27() {
+               head = null;
+               size = 0;
+            }
+
+            public boolean isEmpty() {
+               return head == null;
+            }
+
+            public void addLast(String data) {
+               if (isEmpty()) {
+                     head = new NodeVaksin27(data);
+               } else {
+                     NodeVaksin27 current = head;
+                     while (current.next != null) {
+                        current = current.next;
+                     }
+                     NodeVaksin27 newNode = new NodeVaksin27(data);
+                     current.next = newNode;
+                     newNode.prev = current;
+               }
+               size++;
+               System.out.println("Peserta " + data + " telah ditambahkan ke antrian. Sisa antrian: " + size);
+            }
+
+            public void remove(String data) {
+               if (isEmpty()) {
+                     System.out.println("Antrian vaksinasi kosong.");
+                     return;
+               }
+               NodeVaksin27 current = head;
+               while (current != null) {
+                     if (current.data.equals(data)) {
+                        if (current == head) {
+                           head = current.next;
+                           if (head != null) {
+                                 head.prev = null;
+                           }
+                        } else {
+                           current.prev.next = current.next;
+                           if (current.next != null) {
+                                 current.next.prev = current.prev;
+                           }
+                        }
+                        System.out.println("Peserta " + data + " telah divaksin.");
+                        size--;
+                        return;
+                     }
+                     current = current.next;
+               }
+               System.out.println("Peserta " + data + " tidak ditemukan dalam antrian vaksinasi.");
+            }
+
+            public void display() {
+               if (isEmpty()) {
+                     System.out.println("Antrian vaksinasi kosong.");
+                     return;
+               }
+               NodeVaksin27 current = head;
+               int nomorAntrian = 1;
+               System.out.println("Nomor Antrian | Nama");
+               System.out.println("--------------------");
+               while (current != null) {
+                     System.out.printf("%13d | %s\n", nomorAntrian, current.data);
+                     current = current.next;
+                     nomorAntrian++;
+               }
+            }
+         }
+
+
+### class VaksinMain27.java
+
+         import java.util.Scanner;
+
+
+         public class VaksinMain27 {
+            public static void main(String[] args) {
+               Vaksin27 linkedList = new Vaksin27();
+               Scanner scanner27 = new Scanner (System.in);
+
+               while (true) {
+                     System.out.println("\nMenu:");
+                     System.out.println("1. Tambahkan peserta vaksinasi");
+                     System.out.println("2. Hapus peserta vaksinasi");
+                     System.out.println("3. Tampilkan antrian vaksinasi");
+                     System.out.println("4. Keluar");
+
+                     System.out.print("Pilih menu: ");
+                     int choice = scanner27.nextInt();
+
+                     switch (choice) {
+                        case 1:
+                           scanner27.nextLine();
+                           System.out.print("Masukkan nama peserta: ");
+                           String name = scanner27.nextLine();
+                           linkedList.addLast(name);
+                           System.out.println("Peserta " + name + " telah ditambahkan ke dalam antrian vaksinasi.");
+                           break;
+                        case 2:
+                           scanner27.nextLine(); 
+                           System.out.print("Masukkan nama peserta yang ingin dihapus: ");
+                           String nameToRemove = scanner27.nextLine();
+                           linkedList.remove(nameToRemove);
+                           break;
+                        case 3:
+                           System.out.println("\nAntrian vaksinasi:");
+                           linkedList.display();
+                           break;
+                        case 4:
+                           System.out.println("Keluar dari program.");
+                           scanner27.close();
+                           System.exit(0);
+                        default:
+                           System.out.println("Menu tidak valid. Silakan pilih menu yang sesuai.");
+                     }
+               }
+            }  
+            }
+
+### Verifikasi Hasil Percobaan
+![alt text](image-8.png)
+![alt text](image-9.png)
 
 2. DATA FILM LAYAR LEBAR
+### class NodeFilm27.java
+
+
+### class Film27.java
+
+
+### class FilmMain27.java
+
